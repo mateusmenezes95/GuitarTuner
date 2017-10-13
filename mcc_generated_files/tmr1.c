@@ -151,7 +151,6 @@ uint16_t TMR1_Counter16BitGet( void )
 
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
-    // Add your custom callback code here
     ADC1_SamplingStop();
     while(!ADC1_IsConversionComplete());
     uint16_t sampleValue = ADC1_Channel0ConversionResultGet();
