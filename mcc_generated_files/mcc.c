@@ -98,32 +98,27 @@ void SYSTEM_ResetCauseClear(RESET_MASKS resetFlagMask);
 
 void SYSTEM_Initialize(void)
 {
+    OSCILLATOR_Initialize();
     PIN_MANAGER_Initialize();
     INTERRUPT_Initialize();
-    OSCILLATOR_Initialize();
     ADC1_Initialize();
+    TMR3_Initialize();
     TMR1_Initialize();
+    DMA_Initialize();
     INTERRUPT_GlobalEnable();
+    WDT_WatchdogtimerSoftwareDisable();
     CORCON_ModeOperatingSet(CORCON_MODE_PORVALUES);
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // CF clock failure; NOSC PRIPLL; CLKLOCK unlocked; OSWEN Switch is Complete; 
-    __builtin_write_OSCCONL((uint8_t) (0x308 & 0x00FF));
-    // FRCDIV FRC/2; PLLPRE 4; DOZE 1:8; PLLPOST 1:2; DOZEN disabled; ROI disabled; 
-    CLKDIV = 0x3102;
-    // TUN Center frequency; 
-    OSCTUN = 0x0;
-    // ROON disabled; ROSEL disabled; RODIV Base clock value; ROSSLP disabled; 
-    REFOCON = 0x0;
-    // PLLDIV 46; 
-    PLLFBD = 0x2E;
-    // RND disabled; SATB disabled; SATA disabled; ACCSAT disabled; 
-	CORCONbits.RND = 0;
-	CORCONbits.SATB = 0;
-	CORCONbits.SATA = 0;
-	CORCONbits.ACCSAT = 0;
+    PLLFBD = 138;    // M=140
+    CLKDIVbits.PLLPRE = 2;  // N1=4
+    CLKDIVbits.PLLPOST = 0; // N2=2
+    __builtin_write_OSCCONH(0x03); // Changes clock configuration to "PLL Primary Oscillator" (NOSC=0b011)
+    __builtin_write_OSCCONL(0x01); // Starts clock changing
+    while (OSCCONbits.COSC != 0b011); // Waits for clock change to finish
+    while (OSCCONbits.LOCK != 1);   // Waits for clock to settle
 }
 
 uint16_t SYSTEM_GetResetCause(void)

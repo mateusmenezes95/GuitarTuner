@@ -13,8 +13,6 @@
  */
 int main(int argc, char** argv) {
     SYSTEM_Initialize();
-    WDT_WatchdogtimerSoftwareDisable();
-    TMR1_Start();
     AD1CON1bits.ADON = 1;
     while(1)
     {

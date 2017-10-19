@@ -1,18 +1,18 @@
 
 /**
-  TMR1 Generated Driver API Source File 
+  TMR3 Generated Driver API Source File 
 
   @Company
     Microchip Technology Inc.
 
   @File Name
-    tmr1.c
+    tmr3.c
 
   @Summary
-    This is the generated source file for the TMR1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
+    This is the generated source file for the TMR3 driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description
-    This source file provides APIs for driver for TMR1. 
+    This source file provides APIs for driver for TMR3. 
     Generation Information : 
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - pic24-dspic-pic32mm : v1.35
         Device            :  dsPIC33EP128MC204
@@ -48,8 +48,7 @@
 */
 
 #include <xc.h>
-#include "tmr1.h"
-#include "pin_manager.h"
+#include "tmr3.h"
 
 /**
   Section: Data Type Definitions
@@ -77,125 +76,109 @@ typedef struct _TMR_OBJ_STRUCT
 
 } TMR_OBJ;
 
-static TMR_OBJ tmr1_obj;
+static TMR_OBJ tmr3_obj;
 
 /**
   Section: Driver Interface
 */
 
 
-void TMR1_Initialize (void)
+void TMR3_Initialize (void)
 {
-    //TMR1 0; 
-    TMR1 = 0x0;
-    //Period = 0.1000009143 s; Frequency = 70000000 Hz; PR1 27344; 
-    PR1 = 0x6AD0;
-    //TCKPS 1:256; TON enabled; TSIDL disabled; TCS FOSC/2; TSYNC disabled; TGATE disabled; 
-    T1CON = 0x8030;
+    //TMR3 0; 
+    TMR3 = 0x0;
+    //Period = 0.00025 s; Frequency = 70000000 Hz; PR3 17500; 
+    PR3 = 0x445C;
+    //TCKPS 1:1; TON enabled; TSIDL disabled; TCS FOSC/2; TGATE disabled; 
+    T3CON = 0x8000;
 
     
-    IFS0bits.T1IF = false;
-    IEC0bits.T1IE = true;
 	
-    tmr1_obj.timerElapsed = false;
+    tmr3_obj.timerElapsed = false;
 
 }
 
 
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
+void TMR3_Tasks_16BitOperation( void )
 {
     /* Check if the Timer Interrupt/Status is set */
-
-    //***User Area Begin
-
-    // ticker function call;
-    // ticker is 1 -> Callback function gets called everytime this ISR executes
-    TMR1_CallBack();
-
-    //***User Area End
-
-    tmr1_obj.count++;
-    tmr1_obj.timerElapsed = true;
-    IFS0bits.T1IF = false;
+    if(IFS0bits.T3IF)
+    {
+        tmr3_obj.count++;
+        tmr3_obj.timerElapsed = true;
+        IFS0bits.T3IF = false;
+    }
 }
 
 
-void TMR1_Period16BitSet( uint16_t value )
+
+void TMR3_Period16BitSet( uint16_t value )
 {
     /* Update the counter values */
-    PR1 = value;
+    PR3 = value;
     /* Reset the status information */
-    tmr1_obj.timerElapsed = false;
+    tmr3_obj.timerElapsed = false;
 }
 
-uint16_t TMR1_Period16BitGet( void )
+uint16_t TMR3_Period16BitGet( void )
 {
-    return( PR1 );
+    return( PR3 );
 }
 
-void TMR1_Counter16BitSet ( uint16_t value )
+void TMR3_Counter16BitSet ( uint16_t value )
 {
     /* Update the counter values */
-    TMR1 = value;
+    TMR3 = value;
     /* Reset the status information */
-    tmr1_obj.timerElapsed = false;
+    tmr3_obj.timerElapsed = false;
 }
 
-uint16_t TMR1_Counter16BitGet( void )
+uint16_t TMR3_Counter16BitGet( void )
 {
-    return( TMR1 );
+    return( TMR3 );
 }
 
 
-void __attribute__ ((weak)) TMR1_CallBack(void)
-{
-    // Add your custom callback code here
-    LED_Toggle();
-}
 
-void TMR1_Start( void )
+void TMR3_Start( void )
 {
     /* Reset the status information */
-    tmr1_obj.timerElapsed = false;
+    tmr3_obj.timerElapsed = false;
 
-    /*Enable the interrupt*/
-    IEC0bits.T1IE = true;
 
     /* Start the Timer */
-    T1CONbits.TON = 1;
+    T3CONbits.TON = 1;
 }
 
-void TMR1_Stop( void )
+void TMR3_Stop( void )
 {
     /* Stop the Timer */
-    T1CONbits.TON = false;
+    T3CONbits.TON = false;
 
-    /*Disable the interrupt*/
-    IEC0bits.T1IE = false;
 }
 
-bool TMR1_GetElapsedThenClear(void)
+bool TMR3_GetElapsedThenClear(void)
 {
     bool status;
     
-    status = tmr1_obj.timerElapsed;
+    status = tmr3_obj.timerElapsed;
 
     if(status == true)
     {
-        tmr1_obj.timerElapsed = false;
+        tmr3_obj.timerElapsed = false;
     }
     return status;
 }
 
-int TMR1_SoftwareCounterGet(void)
+int TMR3_SoftwareCounterGet(void)
 {
-    return tmr1_obj.count;
+    return tmr3_obj.count;
 }
 
-void TMR1_SoftwareCounterClear(void)
+void TMR3_SoftwareCounterClear(void)
 {
-    tmr1_obj.count = 0; 
+    tmr3_obj.count = 0; 
 }
 
 /**
