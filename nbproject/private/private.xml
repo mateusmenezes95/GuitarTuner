@@ -5,15 +5,11 @@
         <group>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/dma.h</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/adc1.c</file>
-            <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/interrupt_manager.c</file>
-            <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/pin_manager.h</file>
-            <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/tmr3.c</file>
+            <file>file:/home/menezes/Desktop/GuitarTuner/guitar_tuner.h</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/adc1.h</file>
-            <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/tmr1.c</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/main.c</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/mcc.c</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/dma.c</file>
-            <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/pin_manager.c</file>
         </group>
     </open-files>
 </project-private>

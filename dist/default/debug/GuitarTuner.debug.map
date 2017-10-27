@@ -20,17 +20,18 @@ Command:
   build/default/debug/mcc_generated_files/mcc.o \
   build/default/debug/mcc_generated_files/traps.o \
   build/default/debug/mcc_generated_files/adc1.o \
-  build/default/debug/main.o \
   build/default/debug/mcc_generated_files/dma.o \
   build/default/debug/mcc_generated_files/tmr3.o \
   build/default/debug/mcc_generated_files/tmr1.o \
-  -T/tmp/tmp00000893.00 \
-  -T/tmp/tmp00000893.01 \
-  -T/tmp/tmp00000893.02 \
-  -T/tmp/tmp00000893.03 \
-  -T/tmp/tmp00000893.04 \
-  -T/tmp/tmp00000893.05 \
-  -T/tmp/tmp00000893.06 \
+  build/default/debug/main.o \
+  /opt/microchip/xc16/v1.31/lib/libdsp-elf.a \
+  -T/tmp/tmp00007a0c.00 \
+  -T/tmp/tmp00007a0c.01 \
+  -T/tmp/tmp00007a0c.02 \
+  -T/tmp/tmp00007a0c.03 \
+  -T/tmp/tmp00007a0c.04 \
+  -T/tmp/tmp00007a0c.05 \
+  -T/tmp/tmp00007a0c.06 \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
@@ -58,16 +59,78 @@ Command:
   --library=lega-c-elf \
   -end-group \
 
-
-Optional library libp33EP128MC204.a not found
 Archive member included because of file (symbol)
 
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_bitrev.obj)
+                              build/default/debug/main.o (_BitReverseComplex)
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_cplxsqrmag.obj)
+                              build/default/debug/main.o (_SquareMagnitudeCplx)
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj)
+                              build/default/debug/main.o (_FFTComplexIP)
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+                              build/default/debug/main.o (_TwidFactorInit)
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj) (_STACK_GUARD)
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
+                              build/default/debug/main.o (_VectorMax)
+/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (_Float2Fract)
+
+Optional library libp33EP128MC204.a not found
 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
                               (__resetPRI)
 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
                               /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o) (__data_init_extended)
 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
                               (__crt_start_mode_normal)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (___subsf3)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o) (_ceilf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (_cosf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (___divsf3)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo) (__fchop)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o) (___eqsf2)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o) (___gtsf2)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o) (_(float, int, long long, short, float, short, int))
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (___floatsisf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o) (_floorf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o) (___nesf2)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo) (__fpack)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo) (__funpack)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo) (__funpack2)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo) (__fPropagateNaN)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (___mulsf3)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo) (__sincosf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
+                              /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o) (_sinf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(errno.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo) (_errno)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo) (__fcompare)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo) (___floatdisf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo) (___floatundisf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo) (_fmodf)
+/opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
+                              /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo) (__fmodrem)
 
 
 Selected CodeGuard Options:
@@ -91,12 +154,12 @@ Program Memory  [Origin = 0x200, Length = 0x155ec]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x154           0x1fe  (510)
-.text                        0x354               0x3d6           0x5c1  (1473)
-.dinit                       0x72a                0x36            0x51  (81)
-.text                        0x760                0x66            0x99  (153)
+.text                        0x200               0xb4a          0x10ef  (4335)
+.text                        0xd4a               0x3f6           0x5f1  (1521)
+.dinit                      0x1140                0x5c            0x8a  (138)
+.text                       0x119c                0xe0           0x150  (336)
 
-                 Total program memory used (bytes):          0x8a9  (2217) 1%
+                 Total program memory used (bytes):         0x18ba  (6330) 4%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -125,13 +188,18 @@ reserve_data_0x1020         0x1020                 0x2             0x2  (2)
 reserve_data_0x1022         0x1022                 0x2             0x2  (2)
 reserve_data_0x1024         0x1024                 0x4             0x4  (4)
 reserve_data_0x1028         0x1028                0x28            0x28  (40)
-.nbss                       0x1050                   0             0xa  (10)
-.ndata                      0x105a                   0             0x2  (2)
-.nbss                       0x105c                   0             0x2  (2)
-.ndata                      0x105e                   0             0x2  (2)
-.bss                        0x1060                   0           0xc24  (3108)
+.nbss                       0x1050                   0             0x8  (8)
+.ndata                      0x1058                   0             0x2  (2)
+.nbss                       0x105a                   0             0x2  (2)
+.ndata                      0x105c                   0             0x2  (2)
+.nbss                       0x105e                   0             0x4  (4)
+.bss                        0x1062                   0           0x224  (548)
+.data                       0x1286                   0             0x2  (2)
+.xbss                       0x1400                   0           0x400  (1024)
+_0xf6bceb2459f3a225         0x4000                   0           0x800  (2048)
+.bss                        0x4800                   0           0x800  (2048)
 
-                 Total data memory used (bytes):          0xc84  (3204) 19%
+                 Total data memory used (bytes):         0x1688  (5768) 35%
 
 
 Dynamic Memory Usage
@@ -139,30 +207,38 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1c84                              0x337c  (13180)
+stack                       0x1800                              0x2800  (10240)
 
-                 Maximum dynamic memory (bytes):         0x337c  (13180)
+                 Maximum dynamic memory (bytes):         0x2800  (10240)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x1050                  _averagePingValue
-                    0x1054                  _averagePongValue
-                    0x1058                  _flag
-                    0x105e                  _pingBufferFull
-                    0x1060                  _pingBuffer
-                    0x1460                  _pongBuffer
-                    0x1860                  _outputSignal
+                    0x1050                  _peakFrequencyBin
+                    0x1052                  _peakFrequency
+                    0x1056                  _i
+                    0x105c                  _pingBufferFull
+                    0x105e                  _completedSampling
+                    0x1062                  _signaInAbs
+                    0x1286                  _STACK_GUARD
+                    0x1400                  _twiddleFactors
+                    0x4000                  _signalIn
+                    0x4800                  _pingBuffer
+                    0x4c00                  _pongBuffer
 
 External Symbols in Data Memory (by name):
 
-                    0x1050                  _averagePingValue
-                    0x1054                  _averagePongValue
-                    0x1058                  _flag
-                    0x1860                  _outputSignal
-                    0x1060                  _pingBuffer
-                    0x105e                  _pingBufferFull
-                    0x1460                  _pongBuffer
+                    0x1286                  _STACK_GUARD
+                    0x105e                  _completedSampling
+                    0x1056                  _i
+                    0x1052                  _peakFrequency
+                    0x1050                  _peakFrequencyBin
+                    0x4800                  _pingBuffer
+                    0x105c                  _pingBufferFull
+                    0x4c00                  _pongBuffer
+                    0x1062                  _signaInAbs
+                    0x4000                  _signalIn
+                    0x1400                  _twiddleFactors
 
 External Symbols in Program Memory (by address):
 
@@ -178,89 +254,132 @@ External Symbols in Program Memory (by address):
                   0x000324                  __HardTrapError
                   0x00032c                  __SoftTrapError
                   0x00034e                  __DefaultInterrupt
-                  0x00037a                  _SYSTEM_Initialize
-                  0x000396                  _OSCILLATOR_Initialize
-                  0x0003e8                  _SYSTEM_GetResetCause
-                  0x000442                  _SYSTEM_ResetCauseFromTrap
-                  0x00045a                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x000476                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x000492                  _SYSTEM_ResetCauseFromExternal
-                  0x0004ae                  _SYSTEM_ResetCauseFromSoftware
-                  0x0004ca                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0004e4                  _SYSTEM_ResetCauseClear
-                  0x0004f4                  _SYSTEM_ResetCauseClearAll
-                  0x0004fc                  _TMR1_Initialize
-                  0x000516                  __T1Interrupt
-                  0x000544                  _TMR1_Period16BitSet
-                  0x000556                  _TMR1_Period16BitGet
-                  0x00055e                  _TMR1_Counter16BitSet
-                  0x000570                  _TMR1_Counter16BitGet
-                  0x000594                  _TMR1_Start
-                  0x0005a4                  _TMR1_Stop
-                  0x0005ae                  _TMR1_GetElapsedThenClear
-                  0x0005c6                  _TMR1_SoftwareCounterGet
-                  0x0005d2                  _TMR1_SoftwareCounterClear
-                  0x0005de                  _TMR3_Initialize
-                  0x0005f4                  _TMR3_Tasks_16BitOperation
-                  0x000616                  _TMR3_Period16BitSet
-                  0x000628                  _TMR3_Period16BitGet
-                  0x000630                  _TMR3_Counter16BitSet
-                  0x000642                  _TMR3_Counter16BitGet
-                  0x00064a                  _TMR3_Start
-                  0x000658                  _TMR3_Stop
-                  0x000660                  _TMR3_GetElapsedThenClear
-                  0x000678                  _TMR3_SoftwareCounterGet
-                  0x000684                  _TMR3_SoftwareCounterClear
-                  0x000690                  _DMA_Initialize
-                  0x0006c6                  __DMA0Interrupt
-                  0x0006f4                  _PIN_MANAGER_Initialize
-                  0x000760                  _ADC1_Initialize
-                  0x000780                  _ADC1_Tasks
-                  0x000788                  _INTERRUPT_Initialize
-                  0x0007ba                  _main
+                  0x000352                  _BitReverseComplex
+                  0x00038e                  _SquareMagnitudeCplx
+                  0x0003c2                  _FFTComplexIP
+                  0x0004ce                  _TwidFactorInit
+                  0x000644                  _VectorMax
+                  0x000664                  _Float2Fract
+                  0x00080a                  ___subsf3
+                  0x00080c                  ___addsf3
+                  0x0008c6                  _ceilf
+                  0x0008d6                  _cosf
+                  0x0008da                  ___divsf3
+                  0x00095e                  __fchop
+                  0x0009ac                  ___lesf2
+                  0x0009ac                  ___eqsf2
+                  0x0009ac                  ___ltsf2
+                  0x0009b0                  ___gtsf2
+                  0x0009b0                  ___gesf2
+                  0x0009b4                  ___fixsfsi
+                  0x0009f6                  ___floatsisf
+                  0x0009fc                  _floorf
+                  0x000a0c                  ___nesf2
+                  0x000a10                  __fpack
+                  0x000a5c                  __funpack
+                  0x000a86                  __funpack2
+                  0x000a96                  __fPropagateNaN
+                  0x000aa8                  __fbopExit
+                  0x000ab0                  __fbopReturnNaN
+                  0x000ab6                  ___mulsf3
+                  0x000b1e                  __sincosf
+                  0x000bf0                  _sinf
+                  0x000bf4                  __fcompare
+                  0x000c2a                  ___floatdisf
+                  0x000c4a                  ___floatundisf
+                  0x000ca8                  _fmodf
+                  0x000cac                  __fmodrem
+                  0x000d70                  _SYSTEM_Initialize
+                  0x000d8c                  _OSCILLATOR_Initialize
+                  0x000dde                  _SYSTEM_GetResetCause
+                  0x000e38                  _SYSTEM_ResetCauseFromTrap
+                  0x000e50                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x000e6c                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x000e88                  _SYSTEM_ResetCauseFromExternal
+                  0x000ea4                  _SYSTEM_ResetCauseFromSoftware
+                  0x000ec0                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x000eda                  _SYSTEM_ResetCauseClear
+                  0x000eea                  _SYSTEM_ResetCauseClearAll
+                  0x000ef2                  _TMR1_Initialize
+                  0x000f0c                  __T1Interrupt
+                  0x000f3a                  _TMR1_Period16BitSet
+                  0x000f4c                  _TMR1_Period16BitGet
+                  0x000f54                  _TMR1_Counter16BitSet
+                  0x000f66                  _TMR1_Counter16BitGet
+                  0x000f8a                  _TMR1_Start
+                  0x000f9a                  _TMR1_Stop
+                  0x000fa4                  _TMR1_GetElapsedThenClear
+                  0x000fbc                  _TMR1_SoftwareCounterGet
+                  0x000fc8                  _TMR1_SoftwareCounterClear
+                  0x000fd4                  _main
+                  0x00108e                  _TMR3_Initialize
+                  0x0010a4                  _TMR3_Tasks_16BitOperation
+                  0x0010c6                  _TMR3_Period16BitSet
+                  0x0010d8                  _TMR3_Period16BitGet
+                  0x0010e0                  _TMR3_Counter16BitSet
+                  0x0010f2                  _TMR3_Counter16BitGet
+                  0x0010fa                  _TMR3_Start
+                  0x001108                  _TMR3_Stop
+                  0x001110                  _TMR3_GetElapsedThenClear
+                  0x001128                  _TMR3_SoftwareCounterGet
+                  0x001134                  _TMR3_SoftwareCounterClear
+                  0x00119c                  _DMA_Initialize
+                  0x0011d2                  __DMA0Interrupt
+                  0x0011e8                  _PIN_MANAGER_Initialize
+                  0x00121e                  _ADC1_Initialize
+                  0x00123e                  _ADC1_Tasks
+                  0x001246                  _INTERRUPT_Initialize
+                  0x001278                  _SetStackGuard
                   0x0157fa                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000760                  _ADC1_Initialize
-                  0x000780                  _ADC1_Tasks
-                  0x000690                  _DMA_Initialize
-                  0x000788                  _INTERRUPT_Initialize
-                  0x000396                  _OSCILLATOR_Initialize
-                  0x0006f4                  _PIN_MANAGER_Initialize
-                  0x0003e8                  _SYSTEM_GetResetCause
-                  0x00037a                  _SYSTEM_Initialize
-                  0x0004e4                  _SYSTEM_ResetCauseClear
-                  0x0004f4                  _SYSTEM_ResetCauseClearAll
-                  0x000476                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x000492                  _SYSTEM_ResetCauseFromExternal
-                  0x00045a                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x0004ae                  _SYSTEM_ResetCauseFromSoftware
-                  0x000442                  _SYSTEM_ResetCauseFromTrap
-                  0x0004ca                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x000570                  _TMR1_Counter16BitGet
-                  0x00055e                  _TMR1_Counter16BitSet
-                  0x0005ae                  _TMR1_GetElapsedThenClear
-                  0x0004fc                  _TMR1_Initialize
-                  0x000556                  _TMR1_Period16BitGet
-                  0x000544                  _TMR1_Period16BitSet
-                  0x0005d2                  _TMR1_SoftwareCounterClear
-                  0x0005c6                  _TMR1_SoftwareCounterGet
-                  0x000594                  _TMR1_Start
-                  0x0005a4                  _TMR1_Stop
-                  0x000642                  _TMR3_Counter16BitGet
-                  0x000630                  _TMR3_Counter16BitSet
-                  0x000660                  _TMR3_GetElapsedThenClear
-                  0x0005de                  _TMR3_Initialize
-                  0x000628                  _TMR3_Period16BitGet
-                  0x000616                  _TMR3_Period16BitSet
-                  0x000684                  _TMR3_SoftwareCounterClear
-                  0x000678                  _TMR3_SoftwareCounterGet
-                  0x00064a                  _TMR3_Start
-                  0x000658                  _TMR3_Stop
-                  0x0005f4                  _TMR3_Tasks_16BitOperation
+                  0x00121e                  _ADC1_Initialize
+                  0x00123e                  _ADC1_Tasks
+                  0x000352                  _BitReverseComplex
+                  0x00119c                  _DMA_Initialize
+                  0x0003c2                  _FFTComplexIP
+                  0x000664                  _Float2Fract
+                  0x001246                  _INTERRUPT_Initialize
+                  0x000d8c                  _OSCILLATOR_Initialize
+                  0x0011e8                  _PIN_MANAGER_Initialize
+                  0x000dde                  _SYSTEM_GetResetCause
+                  0x000d70                  _SYSTEM_Initialize
+                  0x000eda                  _SYSTEM_ResetCauseClear
+                  0x000eea                  _SYSTEM_ResetCauseClearAll
+                  0x000e6c                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x000e88                  _SYSTEM_ResetCauseFromExternal
+                  0x000e50                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x000ea4                  _SYSTEM_ResetCauseFromSoftware
+                  0x000e38                  _SYSTEM_ResetCauseFromTrap
+                  0x000ec0                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x001278                  _SetStackGuard
+                  0x00038e                  _SquareMagnitudeCplx
+                  0x000f66                  _TMR1_Counter16BitGet
+                  0x000f54                  _TMR1_Counter16BitSet
+                  0x000fa4                  _TMR1_GetElapsedThenClear
+                  0x000ef2                  _TMR1_Initialize
+                  0x000f4c                  _TMR1_Period16BitGet
+                  0x000f3a                  _TMR1_Period16BitSet
+                  0x000fc8                  _TMR1_SoftwareCounterClear
+                  0x000fbc                  _TMR1_SoftwareCounterGet
+                  0x000f8a                  _TMR1_Start
+                  0x000f9a                  _TMR1_Stop
+                  0x0010f2                  _TMR3_Counter16BitGet
+                  0x0010e0                  _TMR3_Counter16BitSet
+                  0x001110                  _TMR3_GetElapsedThenClear
+                  0x00108e                  _TMR3_Initialize
+                  0x0010d8                  _TMR3_Period16BitGet
+                  0x0010c6                  _TMR3_Period16BitSet
+                  0x001134                  _TMR3_SoftwareCounterClear
+                  0x001128                  _TMR3_SoftwareCounterGet
+                  0x0010fa                  _TMR3_Start
+                  0x001108                  _TMR3_Stop
+                  0x0010a4                  _TMR3_Tasks_16BitOperation
+                  0x0004ce                  _TwidFactorInit
+                  0x000644                  _VectorMax
                   0x00030c                  __AddressError
-                  0x0006c6                  __DMA0Interrupt
+                  0x0011d2                  __DMA0Interrupt
                   0x00031c                  __DMACError
                   0x00034e                  __DefaultInterrupt
                   0x0157fa                  __FGS.sec
@@ -269,12 +388,41 @@ External Symbols in Program Memory (by name):
                   0x0002fa                  __OscillatorFail
                   0x00032c                  __SoftTrapError
                   0x000302                  __StackError
-                  0x000516                  __T1Interrupt
+                  0x000f0c                  __T1Interrupt
+                  0x00080c                  ___addsf3
+                  0x0008da                  ___divsf3
+                  0x0009ac                  ___eqsf2
+                  0x0009b4                  ___fixsfsi
+                  0x000c2a                  ___floatdisf
+                  0x0009f6                  ___floatsisf
+                  0x000c4a                  ___floatundisf
+                  0x0009b0                  ___gesf2
+                  0x0009b0                  ___gtsf2
+                  0x0009ac                  ___lesf2
+                  0x0009ac                  ___ltsf2
+                  0x000ab6                  ___mulsf3
+                  0x000a0c                  ___nesf2
+                  0x00080a                  ___subsf3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
+                  0x000a96                  __fPropagateNaN
+                  0x000aa8                  __fbopExit
+                  0x000ab0                  __fbopReturnNaN
+                  0x00095e                  __fchop
+                  0x000bf4                  __fcompare
+                  0x000cac                  __fmodrem
+                  0x000a10                  __fpack
+                  0x000a5c                  __funpack
+                  0x000a86                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0007ba                  _main
+                  0x000b1e                  __sincosf
+                  0x0008c6                  _ceilf
+                  0x0008d6                  _cosf
+                  0x0009fc                  _floorf
+                  0x000ca8                  _fmodf
+                  0x000fd4                  _main
+                  0x000bf0                  _sinf
 
 Memory Configuration
 
@@ -303,10 +451,11 @@ LOAD build/default/debug/mcc_generated_files/pin_manager.o
 LOAD build/default/debug/mcc_generated_files/mcc.o
 LOAD build/default/debug/mcc_generated_files/traps.o
 LOAD build/default/debug/mcc_generated_files/adc1.o
-LOAD build/default/debug/main.o
 LOAD build/default/debug/mcc_generated_files/dma.o
 LOAD build/default/debug/mcc_generated_files/tmr3.o
 LOAD build/default/debug/mcc_generated_files/tmr1.o
+LOAD build/default/debug/main.o
+LOAD /opt/microchip/xc16/v1.31/lib/libdsp-elf.a
 
 reserve_data_0x1000
                     0x1000         0x1c
@@ -371,7 +520,7 @@ LOAD /opt/microchip/xc16/v1.31/bin/bin/../../lib/libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x154
+.text             0x000200        0xb4a
  *(.init)
  .init            0x000200         0x48 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __reset
@@ -397,11 +546,85 @@ LOAD /opt/microchip/xc16/v1.31/bin/bin/../../lib/libfx-elf.a
  *(.libc)
  *(.libm)
  *(.libdsp)
+ .libdsp          0x000352         0x3c /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_bitrev.obj)
+                  0x000352                  _BitReverseComplex
+ .libdsp          0x00038e         0x34 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_cplxsqrmag.obj)
+                  0x00038e                  _SquareMagnitudeCplx
+ .libdsp          0x0003c2        0x10c /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj)
+                  0x0003c2                  _FFTComplexIP
+ .libdsp          0x0004ce        0x176 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+                  0x0004ce                  _TwidFactorInit
+ .libdsp          0x000644         0x20 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
+                  0x000644                  _VectorMax
+ .libdsp          0x000664        0x1a4 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+                  0x000664                  _Float2Fract
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000352          0x2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
-                  0x000352                  __crt_start_mode_normal
-                  0x000352                  __crt_start_mode
+                  0x000808          0x2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
+                  0x000808                  __crt_start_mode_normal
+                  0x000808                  __crt_start_mode
+ .libm.subsf3     0x00080a         0xbc /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
+                  0x00080a                  ___subsf3
+                  0x00080c                  ___addsf3
+ .libm.ceilf      0x0008c6         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
+                  0x0008c6                  _ceilf
+ .libm.cosf       0x0008d6          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
+                  0x0008d6                  _cosf
+ .libm.divfs3     0x0008da         0x84 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                  0x0008da                  ___divsf3
+ .libm.fchop      0x00095e         0x4e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
+                  0x00095e                  __fchop
+ .libm.eqsf2      0x0009ac          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
+                  0x0009ac                  ___lesf2
+                  0x0009ac                  ___eqsf2
+                  0x0009ac                  ___ltsf2
+ .libm.gtsf2      0x0009b0          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
+                  0x0009b0                  ___gtsf2
+                  0x0009b0                  ___gesf2
+ .libm.fixsfsi    0x0009b4         0x42 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
+                  0x0009b4                  _(float, int, long long, short, float, short, int)
+ .libm.floatsisf
+                  0x0009f6          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                  0x0009f6                  ___floatsisf
+ .libm.floorf     0x0009fc         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
+                  0x0009fc                  _floorf
+ .libm.nesf2      0x000a0c          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
+                  0x000a0c                  ___nesf2
+ .libm.fpack      0x000a10         0x4c /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                  0x000a10                  __fpack
+ .libm.funpack    0x000a5c         0x2a /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                  0x000a5c                  __funpack
+ .libm.funpack2
+                  0x000a86         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                  0x000a86                  __funpack2
+ .libm.fPropagateNaN
+                  0x000a96         0x12 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000a96                  __fPropagateNaN
+ .libm.fbobExit
+                  0x000aa8          0x8 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000aa8                  __fbopExit
+ .libm.fbopReturnNaN
+                  0x000ab0          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000ab0                  __fbopReturnNaN
+ .libm.mulsf3     0x000ab6         0x68 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
+                  0x000ab6                  ___mulsf3
+ .libm.sincosf    0x000b1e         0xd2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
+                  0x000b1e                  __sincosf
+ .libm.sinf       0x000bf0          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
+                  0x000bf0                  _sinf
+ .libm.fcompare
+                  0x000bf4         0x36 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
+                  0x000bf4                  __fcompare
+ .libm.floatdisf
+                  0x000c2a         0x20 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                  0x000c2a                  ___floatdisf
+ .libm.floatundisf
+                  0x000c4a         0x5e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                  0x000c4a                  ___floatundisf
+ .libm.fmodf      0x000ca8          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
+                  0x000ca8                  _fmodf
+ .libm.fmodrem    0x000cac         0x9e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
+                  0x000cac                  __fmodrem
 
 usercode
  *(usercode)
@@ -441,65 +664,73 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x90ca
+.debug_info       0x000000       0x967b
  *(.debug_info)
  .debug_info      0x000000        0x460 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_info      0x000460        0x313 build/default/debug/mcc_generated_files/pin_manager.o
  .debug_info      0x000773       0x2b0b build/default/debug/mcc_generated_files/mcc.o
  .debug_info      0x00327e        0x5c4 build/default/debug/mcc_generated_files/traps.o
  .debug_info      0x003842        0xfe9 build/default/debug/mcc_generated_files/adc1.o
- .debug_info      0x00482b       0x21c0 build/default/debug/main.o
- .debug_info      0x0069eb       0x170d build/default/debug/mcc_generated_files/dma.o
- .debug_info      0x0080f8        0x654 build/default/debug/mcc_generated_files/tmr3.o
- .debug_info      0x00874c        0x97e build/default/debug/mcc_generated_files/tmr1.o
+ .debug_info      0x00482b       0x16eb build/default/debug/mcc_generated_files/dma.o
+ .debug_info      0x005f16        0x654 build/default/debug/mcc_generated_files/tmr3.o
+ .debug_info      0x00656a        0x97e build/default/debug/mcc_generated_files/tmr1.o
+ .debug_info      0x006ee8       0x23bc build/default/debug/main.o
+ .debug_info      0x0092a4        0x248 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_info      0x0094ec        0x18f /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x971
+.debug_abbrev     0x000000        0xaf9
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xa7 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_abbrev    0x0000a7         0x4c build/default/debug/mcc_generated_files/pin_manager.o
  .debug_abbrev    0x0000f3        0x1c1 build/default/debug/mcc_generated_files/mcc.o
  .debug_abbrev    0x0002b4        0x10d build/default/debug/mcc_generated_files/traps.o
  .debug_abbrev    0x0003c1         0xf0 build/default/debug/mcc_generated_files/adc1.o
- .debug_abbrev    0x0004b1         0xfa build/default/debug/main.o
- .debug_abbrev    0x0005ab        0x123 build/default/debug/mcc_generated_files/dma.o
- .debug_abbrev    0x0006ce        0x148 build/default/debug/mcc_generated_files/tmr3.o
- .debug_abbrev    0x000816        0x15b build/default/debug/mcc_generated_files/tmr1.o
+ .debug_abbrev    0x0004b1        0x126 build/default/debug/mcc_generated_files/dma.o
+ .debug_abbrev    0x0005d7        0x148 build/default/debug/mcc_generated_files/tmr3.o
+ .debug_abbrev    0x00071f        0x15b build/default/debug/mcc_generated_files/tmr1.o
+ .debug_abbrev    0x00087a        0x189 build/default/debug/main.o
+ .debug_abbrev    0x000a03         0x95 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_abbrev    0x000a98         0x61 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
 
-.debug_line       0x000000        0x7f0
+.debug_line       0x000000        0xb90
  *(.debug_line)
  .debug_line      0x000000         0xa5 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_line      0x0000a5         0xaf build/default/debug/mcc_generated_files/pin_manager.o
  .debug_line      0x000154        0x15e build/default/debug/mcc_generated_files/mcc.o
  .debug_line      0x0002b2        0x117 build/default/debug/mcc_generated_files/traps.o
  .debug_line      0x0003c9         0xe5 build/default/debug/mcc_generated_files/adc1.o
- .debug_line      0x0004ae         0x84 build/default/debug/main.o
- .debug_line      0x000532         0xaa build/default/debug/mcc_generated_files/dma.o
- .debug_line      0x0005dc        0x106 build/default/debug/mcc_generated_files/tmr3.o
- .debug_line      0x0006e2        0x10e build/default/debug/mcc_generated_files/tmr1.o
+ .debug_line      0x0004ae        0x155 build/default/debug/mcc_generated_files/dma.o
+ .debug_line      0x000603        0x106 build/default/debug/mcc_generated_files/tmr3.o
+ .debug_line      0x000709        0x10e build/default/debug/mcc_generated_files/tmr1.o
+ .debug_line      0x000817        0x135 build/default/debug/main.o
+ .debug_line      0x00094c        0x115 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_line      0x000a61        0x12f /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
 
-.debug_frame      0x000000        0x668
+.debug_frame      0x000000        0x6b0
  *(.debug_frame)
  .debug_frame     0x000000         0x30 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_frame     0x000030         0x30 build/default/debug/mcc_generated_files/pin_manager.o
  .debug_frame     0x000060        0x1b8 build/default/debug/mcc_generated_files/mcc.o
  .debug_frame     0x000218         0xb0 build/default/debug/mcc_generated_files/traps.o
  .debug_frame     0x0002c8         0x4c build/default/debug/mcc_generated_files/adc1.o
- .debug_frame     0x000314         0x30 build/default/debug/main.o
- .debug_frame     0x000344         0x54 build/default/debug/mcc_generated_files/dma.o
- .debug_frame     0x000398        0x148 build/default/debug/mcc_generated_files/tmr3.o
- .debug_frame     0x0004e0        0x188 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_frame     0x000314         0x54 build/default/debug/mcc_generated_files/dma.o
+ .debug_frame     0x000368        0x148 build/default/debug/mcc_generated_files/tmr3.o
+ .debug_frame     0x0004b0        0x188 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_frame     0x000638         0x30 build/default/debug/main.o
+ .debug_frame     0x000668         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_frame     0x00068c         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
 
-.debug_str        0x000000        0x717
+.debug_str        0x000000        0x7a2
  *(.debug_str)
  .debug_str       0x000000         0x12 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_str       0x000012        0x244 build/default/debug/mcc_generated_files/mcc.o
  .debug_str       0x000256         0x24 build/default/debug/mcc_generated_files/traps.o
  .debug_str       0x00027a         0x87 build/default/debug/mcc_generated_files/adc1.o
- .debug_str       0x000301        0x217 build/default/debug/main.o
- .debug_str       0x000518        0x1c7 build/default/debug/mcc_generated_files/dma.o
- .debug_str       0x0006df         0x13 build/default/debug/mcc_generated_files/tmr3.o
- .debug_str       0x0006f2         0x25 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_str       0x000301        0x1d9 build/default/debug/mcc_generated_files/dma.o
+ .debug_str       0x0004da         0x13 build/default/debug/mcc_generated_files/tmr3.o
+ .debug_str       0x0004ed         0x25 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_str       0x000512        0x290 build/default/debug/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -508,7 +739,7 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x5c2
+                  0x000000        0x637
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x2b build/default/debug/mcc_generated_files/interrupt_manager.o
@@ -521,18 +752,22 @@ __FUID3
  .debug_pubnames
                   0x00028c         0x35 build/default/debug/mcc_generated_files/adc1.o
  .debug_pubnames
-                  0x0002c1         0x1b build/default/debug/main.o
+                  0x0002c1         0x7f build/default/debug/mcc_generated_files/dma.o
  .debug_pubnames
-                  0x0002dc         0xad build/default/debug/mcc_generated_files/dma.o
+                  0x000340        0x11a build/default/debug/mcc_generated_files/tmr3.o
  .debug_pubnames
-                  0x000389        0x11a build/default/debug/mcc_generated_files/tmr3.o
+                  0x00045a        0x11f build/default/debug/mcc_generated_files/tmr1.o
  .debug_pubnames
-                  0x0004a3        0x11f build/default/debug/mcc_generated_files/tmr1.o
+                  0x000579         0x77 build/default/debug/main.o
+ .debug_pubnames
+                  0x0005f0         0x25 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_pubnames
+                  0x000615         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000        0x110
+.debug_aranges    0x000000        0x140
  *(.debug_aranges)
  .debug_aranges
                   0x000000         0x18 build/default/debug/mcc_generated_files/interrupt_manager.o
@@ -545,13 +780,17 @@ __FUID3
  .debug_aranges
                   0x000098         0x18 build/default/debug/mcc_generated_files/adc1.o
  .debug_aranges
-                  0x0000b0         0x18 build/default/debug/main.o
+                  0x0000b0         0x18 build/default/debug/mcc_generated_files/dma.o
  .debug_aranges
-                  0x0000c8         0x18 build/default/debug/mcc_generated_files/dma.o
+                  0x0000c8         0x18 build/default/debug/mcc_generated_files/tmr3.o
  .debug_aranges
-                  0x0000e0         0x18 build/default/debug/mcc_generated_files/tmr3.o
+                  0x0000e0         0x18 build/default/debug/mcc_generated_files/tmr1.o
  .debug_aranges
-                  0x0000f8         0x18 build/default/debug/mcc_generated_files/tmr1.o
+                  0x0000f8         0x18 build/default/debug/main.o
+ .debug_aranges
+                  0x000110         0x18 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_aranges
+                  0x000128         0x18 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1678,75 +1917,164 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000110        0xb75
+                  0x000140        0xc4a
  .debug_pubtypes
-                  0x000110         0x4c build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x000140         0x4c build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_pubtypes
-                  0x00015c         0x12 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x00018c         0x12 build/default/debug/mcc_generated_files/pin_manager.o
  .debug_pubtypes
-                  0x00016e        0x367 build/default/debug/mcc_generated_files/mcc.o
+                  0x00019e        0x367 build/default/debug/mcc_generated_files/mcc.o
  .debug_pubtypes
-                  0x0004d5         0x94 build/default/debug/mcc_generated_files/traps.o
+                  0x000505         0x94 build/default/debug/mcc_generated_files/traps.o
  .debug_pubtypes
-                  0x000569        0x137 build/default/debug/mcc_generated_files/adc1.o
+                  0x000599        0x137 build/default/debug/mcc_generated_files/adc1.o
  .debug_pubtypes
-                  0x0006a0        0x2c5 build/default/debug/main.o
+                  0x0006d0        0x204 build/default/debug/mcc_generated_files/dma.o
  .debug_pubtypes
-                  0x000965        0x1d8 build/default/debug/mcc_generated_files/dma.o
+                  0x0008d4         0x87 build/default/debug/mcc_generated_files/tmr3.o
  .debug_pubtypes
-                  0x000b3d         0x87 build/default/debug/mcc_generated_files/tmr3.o
+                  0x00095b         0xc1 build/default/debug/mcc_generated_files/tmr1.o
  .debug_pubtypes
-                  0x000bc4         0xc1 build/default/debug/mcc_generated_files/tmr1.o
+                  0x000a1c        0x31b build/default/debug/main.o
+ .debug_pubtypes
+                  0x000d37         0x32 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ .debug_pubtypes
+                  0x000d69         0x21 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
 
 __c30_signature
-                  0x000c85         0x42
+                  0x000d8a         0xfc
  __c30_signature
-                  0x000c85          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x000d8a          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000c8b          0x6 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x000d90          0x6 build/default/debug/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000c91          0x6 build/default/debug/mcc_generated_files/mcc.o
+                  0x000d96          0x6 build/default/debug/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000c97          0x6 build/default/debug/mcc_generated_files/traps.o
+                  0x000d9c          0x6 build/default/debug/mcc_generated_files/traps.o
  __c30_signature
-                  0x000c9d          0x6 build/default/debug/mcc_generated_files/adc1.o
+                  0x000da2          0x6 build/default/debug/mcc_generated_files/adc1.o
  __c30_signature
-                  0x000ca3          0x6 build/default/debug/main.o
+                  0x000da8          0x6 build/default/debug/mcc_generated_files/dma.o
  __c30_signature
-                  0x000ca9          0x6 build/default/debug/mcc_generated_files/dma.o
+                  0x000dae          0x6 build/default/debug/mcc_generated_files/tmr3.o
  __c30_signature
-                  0x000caf          0x6 build/default/debug/mcc_generated_files/tmr3.o
+                  0x000db4          0x6 build/default/debug/mcc_generated_files/tmr1.o
  __c30_signature
-                  0x000cb5          0x6 build/default/debug/mcc_generated_files/tmr1.o
+                  0x000dba          0x6 build/default/debug/main.o
  __c30_signature
-                  0x000cbb          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x000dc0          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_bitrev.obj)
  __c30_signature
-                  0x000cc1          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x000dc6          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_cplxsqrmag.obj)
+ __c30_signature
+                  0x000dcc          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj)
+ __c30_signature
+                  0x000dd2          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
+ __c30_signature
+                  0x000dd8          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
+ __c30_signature
+                  0x000dde          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
+ __c30_signature
+                  0x000de4          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+ __c30_signature
+                  0x000dea          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+ __c30_signature
+                  0x000df0          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+ __c30_signature
+                  0x000df6          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
+ __c30_signature
+                  0x000dfc          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
+ __c30_signature
+                  0x000e02          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
+ __c30_signature
+                  0x000e08          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+ __c30_signature
+                  0x000e0e          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
+ __c30_signature
+                  0x000e14          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
+ __c30_signature
+                  0x000e1a          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
+ __c30_signature
+                  0x000e20          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
+ __c30_signature
+                  0x000e26          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+ __c30_signature
+                  0x000e2c          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
+ __c30_signature
+                  0x000e32          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
+ __c30_signature
+                  0x000e38          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+ __c30_signature
+                  0x000e3e          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+ __c30_signature
+                  0x000e44          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+ __c30_signature
+                  0x000e4a          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+ __c30_signature
+                  0x000e50          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
+ __c30_signature
+                  0x000e56          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
+ __c30_signature
+                  0x000e5c          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
+ __c30_signature
+                  0x000e62          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(errno.epeo)
+ __c30_signature
+                  0x000e68          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
+ __c30_signature
+                  0x000e6e          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+ __c30_signature
+                  0x000e74          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+ __c30_signature
+                  0x000e7a          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
+ __c30_signature
+                  0x000e80          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
 
-.nbss               0x1050          0xa
- .nbss              0x1050          0xa build/default/debug/mcc_generated_files/dma.o
-                    0x1050                  _averagePingValue
-                    0x1054                  _averagePongValue
-                    0x1058                  _flag
+.nbss               0x1050          0x8
+ .nbss              0x1050          0x8 build/default/debug/main.o
+                    0x1050                  _peakFrequencyBin
+                    0x1052                  _peakFrequency
+                    0x1056                  _i
 
-.ndata              0x105a          0x2
- .ndata             0x105a          0x2 build/default/debug/mcc_generated_files/traps.o
+.ndata              0x1058          0x2
+ .ndata             0x1058          0x2 build/default/debug/mcc_generated_files/traps.o
 
-.nbss               0x105c          0x2
- .nbss              0x105c          0x2 build/default/debug/mcc_generated_files/adc1.o
+.nbss               0x105a          0x2
+ .nbss              0x105a          0x2 build/default/debug/mcc_generated_files/adc1.o
 
-.ndata              0x105e          0x2
- .ndata             0x105e          0x2 build/default/debug/mcc_generated_files/dma.o
-                    0x105e                  _pingBufferFull
+.ndata              0x105c          0x2
+ .ndata             0x105c          0x2 build/default/debug/mcc_generated_files/dma.o
+                    0x105c                  _pingBufferFull
 
-.bss                0x1060        0xc24
- .bss               0x1060        0xc00 build/default/debug/mcc_generated_files/dma.o
-                    0x1060                  _pingBuffer
-                    0x1460                  _pongBuffer
-                    0x1860                  _outputSignal
- .bss               0x1c60         0x20 build/default/debug/mcc_generated_files/traps.o
- .bss               0x1c80          0x2 build/default/debug/mcc_generated_files/tmr3.o
- .bss               0x1c82          0x2 build/default/debug/mcc_generated_files/tmr1.o
+.nbss               0x105e          0x4
+ .nbss              0x105e          0x2 build/default/debug/mcc_generated_files/dma.o
+                    0x105e                  _completedSampling
+ .nbss              0x1060          0x2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(errno.epeo)
+                    0x1060                  _errno
+
+.xbss               0x1400        0x400
+ .xbss              0x1400        0x400 build/default/debug/main.o
+                    0x1400                  _twiddleFactors
+
+_0xf6bceb2459f3a225
+                    0x4000        0x800
+ _0xf6bceb2459f3a225
+                    0x4000        0x800 build/default/debug/main.o
+                    0x4000                  _signalIn
+
+.bss                0x4800        0x800
+ .bss               0x4800        0x800 build/default/debug/mcc_generated_files/dma.o
+                    0x4800                  _pingBuffer
+                    0x4c00                  _pongBuffer
+
+.bss                0x1062        0x224
+ .bss               0x1062        0x200 build/default/debug/main.o
+                    0x1062                  _signaInAbs
+ .bss               0x1262         0x20 build/default/debug/mcc_generated_files/traps.o
+ .bss               0x1282          0x2 build/default/debug/mcc_generated_files/tmr3.o
+ .bss               0x1284          0x2 build/default/debug/mcc_generated_files/tmr1.o
+
+.data               0x1286          0x2
+ .data              0x1286          0x2 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
+                    0x1286                  _STACK_GUARD
 
 .config_IESO      0x0157f8          0x2
  .config_IESO     0x0157f8          0x2 build/default/debug/mcc_generated_files/mcc.o
@@ -1811,61 +2139,63 @@ __c30_signature
  .ivt._T1Interrupt
                   0x00001a          0x2 build/default/debug/mcc_generated_files/tmr1.o
 
-.text             0x000354        0x3d6
- .text            0x000354        0x1a8 build/default/debug/mcc_generated_files/mcc.o
-                  0x00037a                  _SYSTEM_Initialize
-                  0x000396                  _OSCILLATOR_Initialize
-                  0x0003e8                  _SYSTEM_GetResetCause
-                  0x0003f0                  _SYSTEM_ResetCauseHandler
-                  0x000442                  _SYSTEM_ResetCauseFromTrap
-                  0x00045a                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x000476                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x000492                  _SYSTEM_ResetCauseFromExternal
-                  0x0004ae                  _SYSTEM_ResetCauseFromSoftware
-                  0x0004ca                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0004e4                  _SYSTEM_ResetCauseClear
-                  0x0004f4                  _SYSTEM_ResetCauseClearAll
- .text            0x0004fc         0xe2 build/default/debug/mcc_generated_files/tmr1.o
-                  0x0004fc                  _TMR1_Initialize
-                  0x000516                  __T1Interrupt
-                  0x000544                  _TMR1_Period16BitSet
-                  0x000556                  _TMR1_Period16BitGet
-                  0x00055e                  _TMR1_Counter16BitSet
-                  0x000570                  _TMR1_Counter16BitGet
-                  0x000578                  _TMR1_CallBack
-                  0x000594                  _TMR1_Start
-                  0x0005a4                  _TMR1_Stop
-                  0x0005ae                  _TMR1_GetElapsedThenClear
-                  0x0005c6                  _TMR1_SoftwareCounterGet
-                  0x0005d2                  _TMR1_SoftwareCounterClear
- .text            0x0005de         0xb2 build/default/debug/mcc_generated_files/tmr3.o
-                  0x0005de                  _TMR3_Initialize
-                  0x0005f4                  _TMR3_Tasks_16BitOperation
-                  0x000616                  _TMR3_Period16BitSet
-                  0x000628                  _TMR3_Period16BitGet
-                  0x000630                  _TMR3_Counter16BitSet
-                  0x000642                  _TMR3_Counter16BitGet
-                  0x00064a                  _TMR3_Start
-                  0x000658                  _TMR3_Stop
-                  0x000660                  _TMR3_GetElapsedThenClear
-                  0x000678                  _TMR3_SoftwareCounterGet
-                  0x000684                  _TMR3_SoftwareCounterClear
- .text            0x000690         0x64 build/default/debug/mcc_generated_files/dma.o
-                  0x000690                  _DMA_Initialize
-                  0x0006c6                  __DMA0Interrupt
- .text            0x0006f4         0x36 build/default/debug/mcc_generated_files/pin_manager.o
-                  0x0006f4                  _PIN_MANAGER_Initialize
+.text             0x000d4a        0x3f6
+ .text            0x000d4a        0x1a8 build/default/debug/mcc_generated_files/mcc.o
+                  0x000d70                  _SYSTEM_Initialize
+                  0x000d8c                  _OSCILLATOR_Initialize
+                  0x000dde                  _SYSTEM_GetResetCause
+                  0x000de6                  _SYSTEM_ResetCauseHandler
+                  0x000e38                  _SYSTEM_ResetCauseFromTrap
+                  0x000e50                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x000e6c                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x000e88                  _SYSTEM_ResetCauseFromExternal
+                  0x000ea4                  _SYSTEM_ResetCauseFromSoftware
+                  0x000ec0                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x000eda                  _SYSTEM_ResetCauseClear
+                  0x000eea                  _SYSTEM_ResetCauseClearAll
+ .text            0x000ef2         0xe2 build/default/debug/mcc_generated_files/tmr1.o
+                  0x000ef2                  _TMR1_Initialize
+                  0x000f0c                  __T1Interrupt
+                  0x000f3a                  _TMR1_Period16BitSet
+                  0x000f4c                  _TMR1_Period16BitGet
+                  0x000f54                  _TMR1_Counter16BitSet
+                  0x000f66                  _TMR1_Counter16BitGet
+                  0x000f6e                  _TMR1_CallBack
+                  0x000f8a                  _TMR1_Start
+                  0x000f9a                  _TMR1_Stop
+                  0x000fa4                  _TMR1_GetElapsedThenClear
+                  0x000fbc                  _TMR1_SoftwareCounterGet
+                  0x000fc8                  _TMR1_SoftwareCounterClear
+ .text            0x000fd4         0xba build/default/debug/main.o
+                  0x000fd4                  _main
+ .text            0x00108e         0xb2 build/default/debug/mcc_generated_files/tmr3.o
+                  0x00108e                  _TMR3_Initialize
+                  0x0010a4                  _TMR3_Tasks_16BitOperation
+                  0x0010c6                  _TMR3_Period16BitSet
+                  0x0010d8                  _TMR3_Period16BitGet
+                  0x0010e0                  _TMR3_Counter16BitSet
+                  0x0010f2                  _TMR3_Counter16BitGet
+                  0x0010fa                  _TMR3_Start
+                  0x001108                  _TMR3_Stop
+                  0x001110                  _TMR3_GetElapsedThenClear
+                  0x001128                  _TMR3_SoftwareCounterGet
+                  0x001134                  _TMR3_SoftwareCounterClear
 
-.dinit            0x00072a         0x36
- .dinit           0x00072a         0x36 data_init
+.dinit            0x001140         0x5c
+ .dinit           0x001140         0x5c data_init
 
-.text             0x000760         0x66
- .text            0x000760         0x28 build/default/debug/mcc_generated_files/adc1.o
-                  0x000760                  _ADC1_Initialize
-                  0x000780                  _ADC1_Tasks
- .text            0x000788         0x1a build/default/debug/mcc_generated_files/interrupt_manager.o
-                  0x000788                  _INTERRUPT_Initialize
- .text            0x0007a2         0x18 build/default/debug/mcc_generated_files/traps.o
-                  0x0007a2                  _TRAPS_halt_on_error
- .text            0x0007ba          0xc build/default/debug/main.o
-                  0x0007ba                  _main
+.text             0x00119c         0xe0
+ .text            0x00119c         0x4c build/default/debug/mcc_generated_files/dma.o
+                  0x00119c                  _DMA_Initialize
+                  0x0011d2                  __DMA0Interrupt
+ .text            0x0011e8         0x36 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x0011e8                  _PIN_MANAGER_Initialize
+ .text            0x00121e         0x28 build/default/debug/mcc_generated_files/adc1.o
+                  0x00121e                  _ADC1_Initialize
+                  0x00123e                  _ADC1_Tasks
+ .text            0x001246         0x1a build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x001246                  _INTERRUPT_Initialize
+ .text            0x001260         0x18 build/default/debug/mcc_generated_files/traps.o
+                  0x001260                  _TRAPS_halt_on_error
+ .text            0x001278          0x4 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
+                  0x001278                  _SetStackGuard
