@@ -50,7 +50,7 @@ fractional pingBuffer[NUM_SAMP];
 
 fractional pongBuffer[NUM_SAMP];
 
-uint8_t pingBufferFull = 1;
+uint8_t pingBufferFull = 0;
 uint8_t completedSampling = 0;
 
 void DMA_Initialize(void) 

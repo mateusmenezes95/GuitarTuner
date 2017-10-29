@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=GuitarTuner
+PROJECTNAME=GuitarTuner.X
 
 # Active Configuration
 DEFAULTCONF=default
