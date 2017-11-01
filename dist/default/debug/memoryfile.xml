@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/GuitarTuner.X.debug.elf">
+  <executable name="dist/default/debug/GuitarTuner.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>16384</length>
-      <used>6790</used>
-      <free>9594</free>
+      <used>7820</used>
+      <free>8564</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>131298</length>
-      <used>7686</used>
-      <free>123612</free>
+      <used>7218</used>
+      <free>124080</free>
     </memory>
   </executable>
 </project>

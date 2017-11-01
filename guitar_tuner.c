@@ -18,7 +18,7 @@ void grandkeFreqInterpolation(uint16_t peakFreqBin, fractional *spectrumAbsVecto
     uint16_t secondPeakFreqBin;
     uint8_t secondPeakBinAfter;
     
-    if(Fract2Float(spectrumAbsVector[peakFreqBin + 1]) > Fract2Float(spectrumAbsVector[peakFreqBin - 1]))
+    if(spectrumAbsVector[peakFreqBin + 1] > spectrumAbsVector[peakFreqBin - 1])
     {
         secondPeakFreqBin = peakFreqBin + 1;
         secondPeakBinAfter = YES;
