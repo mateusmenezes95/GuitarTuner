@@ -10,7 +10,7 @@
 /*
  * 
  */
-void grandkeFreqInterpolation(uint16_t peakFreqBin, fractional *spectrumAbsVector, float *trueValueFreq)
+void GrandkeFreqInterpolation(uint16_t peakFreqBin, fractional *spectrumAbsVector, float *trueValueFreq)
 {
     float delta;
     float alfa;
@@ -37,5 +37,15 @@ void grandkeFreqInterpolation(uint16_t peakFreqBin, fractional *spectrumAbsVecto
         *trueValueFreq = ((float)peakFreqBin + delta) * resolution;
     else
         *trueValueFreq = ((float)peakFreqBin - delta) * resolution;        
+}
+
+void FillVector(uint16_t vectorSize, fractional *vector2Fill, fractional data)
+{
+    int i;
+    
+    for(i = 0; i < vectorSize; i++)
+    {
+        vector2Fill[i] = data;
+    }
 }
 

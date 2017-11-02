@@ -37,7 +37,28 @@ enum sampleStatus{NO, YES};
   @Example 
   
 */
-void grandkeFreqInterpolation (uint16_t peakFreqBin, fractional* spectrumAbsVector, float *trueValueFreq);
+void GrandkeFreqInterpolation (uint16_t peakFreqBin, fractional* spectrumAbsVector, float *trueValueFreq);
+
+/**
+  @Summary
+    Updates 16-bit timer value
+
+  @Description
+    This routine fill a vector with a specified value
+
+  @Param
+    vectorSize - Size of vector
+    vector2Fill - The vector to fill
+    trueValueFreq - Data to be assigned 
+
+  @Returns
+    None
+ 
+  @Example 
+  
+*/
+
+void FillVector(uint16_t vectorSize, fractional *vector2Fill, fractional data);
 
 #endif	/* GUITAR_TUNER_H */
 
