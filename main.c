@@ -31,8 +31,9 @@ int16_t	peakFrequencyBin = 0;
 float peakFrequency = 0;
 fractional spectrumPower;
 fractional averageConstant;
-fractional averageVector[NUM_SAMP];
-fractional averageVectorValue = 0;
+fractional aux_vector[NUM_SAMP];
+fractional average_vector[NUM_SAMP];
+fractional signal_in_dc_level = 0;
 
 int i = 0;
 
@@ -44,11 +45,7 @@ int main(int argc, char** argv) {
     TwidFactorInit(LOG2_NUM_SAMP, &twiddleFactors[0], 0);
     HanningInit(NUM_SAMP, hanningWindow);
     averageConstant = Float2Fract(0.0019531);
-    
-    for(i = 0; i < NUM_SAMP; i++)
-    {
-        averageVector[i] = averageConstant;
-    }
+    FillVector(NUM_SAMP, average_vector, averageConstant);
     
     while(1)
     {
@@ -57,13 +54,9 @@ int main(int argc, char** argv) {
             completedSampling = NO;
             if(pingBufferFull)
             {
-                averageVectorValue = VectorDotProduct(NUM_SAMP, pingBuffer, averageVector);
-                for(i = 0; i < NUM_SAMP; i++)
-                {
-                    averageVector[i] = averageVectorValue;
-                }
-                VectorSubtract(NUM_SAMP, pingBuffer, pingBuffer, averageVector);
-                
+                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pingBuffer, average_vector);
+                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
+                VectorSubtract(NUM_SAMP, pingBuffer, pingBuffer, aux_vector);   //Remove dc level from signal in
                 for(i = 0; i < NUM_SAMP; i++)
                 {
                     signalInComplex[i].real = pingBuffer[i];
@@ -72,22 +65,14 @@ int main(int argc, char** argv) {
             }
             else
             {
-                averageVectorValue = VectorDotProduct(NUM_SAMP, pingBuffer, averageVector);
-                for(i = 0; i < NUM_SAMP; i++)
-                {
-                    averageVector[i] = averageVectorValue;
-                }
-                VectorSubtract(NUM_SAMP, pongBuffer, pongBuffer, averageVector);
+                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pingBuffer, average_vector);
+                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
+                VectorSubtract(NUM_SAMP, pongBuffer, pongBuffer, aux_vector);   //Remove dc level from signal in
                 for(i = 0; i < NUM_SAMP; i++)
                 {
                     signalInComplex[i].real = pongBuffer[i];
                     signalInComplex[i].imag = 0;
                 }                              
-            }
-            
-            for(i = 0; i < NUM_SAMP; i++)
-            {
-                averageVector[i] = averageVectorValue;
             }
             
             VectorWindow(NUM_SAMP, &signalInComplex[0].real, &signalInComplex[0].real, hanningWindow); 
@@ -97,7 +82,7 @@ int main(int argc, char** argv) {
             SquareMagnitudeCplx(NUM_SAMP/2, &signalInComplex[0], signalInAbs);                        //Compute spectrum magnitude and store it another vector
             signalInAbs[0] = 0;
             VectorMax(NUM_SAMP/2, signalInAbs, &peakFrequencyBin);                                    //Find the greatest frequency bin
-            grandkeFreqInterpolation(peakFrequencyBin, signalInAbs, &peakFrequency);
+            GrandkeFreqInterpolation(peakFrequencyBin, signalInAbs, &peakFrequency);
             int x = 0;
             
         }
