@@ -11,26 +11,26 @@
 #include "guitar_tuner.h"
 #include <math.h>
 
-extern fractional pingBuffer[NUM_SAMP];
-extern fractional pongBuffer[NUM_SAMP];
+extern fractional ping_buffer[NUM_SAMP];
+extern fractional pong_buffer[NUM_SAMP];
 
-fractcomplex signalInComplex[NUM_SAMP]
+fractcomplex signal_in_complex[NUM_SAMP]
 __attribute__ ((eds, space(ymemory), aligned (NUM_SAMP * 2 *2)));
 
-fractcomplex twiddleFactors[NUM_SAMP/2]
+fractcomplex twiddle_factors[NUM_SAMP/2]
 __attribute__ ((section (".xbss, bss, xmemory"), aligned (NUM_SAMP*2)));
 
-fractional hanningWindow[NUM_SAMP];
+fractional hanning_window[NUM_SAMP];
 
-fractional signalInAbs[NUM_SAMP/2];
+fractional signal_in_Abs[NUM_SAMP/2];
 
-extern uint8_t pingBufferFull;
-extern uint8_t completedSampling;
+extern uint8_t ping_buffer_full;
+extern uint8_t completed_sampling;
 
-int16_t	peakFrequencyBin = 0;
-float peakFrequency = 0;
-fractional spectrumPower;
-fractional averageConstant;
+int16_t	peak_frequency_bin = 0;
+float peak_frequency = 0;
+fractional spectrum_power;
+fractional average_constant;
 fractional aux_vector[NUM_SAMP];
 fractional average_vector[NUM_SAMP];
 fractional signal_in_dc_level = 0;
@@ -42,51 +42,51 @@ int main(int argc, char** argv) {
     SYSTEM_Initialize();
     AD1CON1bits.ADON = 1;
     
-    TwidFactorInit(LOG2_NUM_SAMP, &twiddleFactors[0], 0);
-    HanningInit(NUM_SAMP, hanningWindow);
-    averageConstant = Float2Fract(0.0019531);
-    FillVector(NUM_SAMP, average_vector, averageConstant);
+    TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
+    HanningInit(NUM_SAMP, hanning_window);
+    average_constant = Float2Fract(1.0/NUM_SAMP);
+    FillVector(NUM_SAMP, average_vector, average_constant);
     
     while(1)
     {
-        if(completedSampling)
+        if(completed_sampling)
         {
-            completedSampling = NO;
-            if(pingBufferFull)
+            completed_sampling = NO;
+            if(ping_buffer_full)
             {
-                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pingBuffer, average_vector);
+                signal_in_dc_level = VectorDotProduct(NUM_SAMP, ping_buffer, average_vector);
                 FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
-                VectorSubtract(NUM_SAMP, pingBuffer, pingBuffer, aux_vector);   //Remove dc level from signal in
+                VectorSubtract(NUM_SAMP, ping_buffer, ping_buffer, aux_vector);   //Remove dc level from signal in
                 for(i = 0; i < NUM_SAMP; i++)
                 {
-                    signalInComplex[i].real = pingBuffer[i];
-                    signalInComplex[i].imag = 0;
+                    signal_in_complex[i].real = ping_buffer[i];
+                    signal_in_complex[i].imag = 0;
                 }                
             }
             else
             {
-                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pingBuffer, average_vector);
+                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pong_buffer, average_vector);
                 FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
-                VectorSubtract(NUM_SAMP, pongBuffer, pongBuffer, aux_vector);   //Remove dc level from signal in
+                VectorSubtract(NUM_SAMP, pong_buffer, pong_buffer, aux_vector);   //Remove dc level from signal in
                 for(i = 0; i < NUM_SAMP; i++)
                 {
-                    signalInComplex[i].real = pongBuffer[i];
-                    signalInComplex[i].imag = 0;
+                    signal_in_complex[i].real = pong_buffer[i];
+                    signal_in_complex[i].imag = 0;
                 }                              
             }
             
-            VectorWindow(NUM_SAMP, &signalInComplex[0].real, &signalInComplex[0].real, hanningWindow); 
-            FFTComplexIP(LOG2_NUM_SAMP, &signalInComplex[0], &twiddleFactors[0], COEFFS_IN_DATA);       //Compute Fast Fourier Transform in place
-            BitReverseComplex(LOG2_NUM_SAMP, &signalInComplex[0]);                                    //Organize the vector with complex spectrum
-            spectrumPower = VectorPower(NUM_SAMP/2, &signalInComplex[0].real);            
-            SquareMagnitudeCplx(NUM_SAMP/2, &signalInComplex[0], signalInAbs);                        //Compute spectrum magnitude and store it another vector
-            signalInAbs[0] = 0;
-            VectorMax(NUM_SAMP/2, signalInAbs, &peakFrequencyBin);                                    //Find the greatest frequency bin
-            GrandkeFreqInterpolation(peakFrequencyBin, signalInAbs, &peakFrequency);
+            VectorWindow(NUM_SAMP, &signal_in_complex[0].real, &signal_in_complex[0].real, hanning_window); 
+            FFTComplexIP(LOG2_NUM_SAMP, &signal_in_complex[0], &twiddle_factors[0], COEFFS_IN_DATA);       
+            BitReverseComplex(LOG2_NUM_SAMP, &signal_in_complex[0]);                                    
+            spectrum_power = VectorPower(NUM_SAMP/2, &signal_in_complex[0].real);            
+            SquareMagnitudeCplx(NUM_SAMP/2, &signal_in_complex[0], signal_in_Abs);                        
+            signal_in_Abs[0] = 0;
+            VectorMax(NUM_SAMP/2, signal_in_Abs, &peak_frequency_bin);                                    
+            GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
             int x = 0;
             
         }
-    }
+        }
     return 1;
 }
 

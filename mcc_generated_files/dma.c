@@ -46,12 +46,12 @@ MPLAB             :  MPLAB X 3.60
 #include "dma.h"
 #include "../guitar_tuner.h"
 
-fractional pingBuffer[NUM_SAMP];
+fractional ping_buffer[NUM_SAMP];
 
-fractional pongBuffer[NUM_SAMP];
+fractional pong_buffer[NUM_SAMP];
 
-uint8_t pingBufferFull = 0;
-uint8_t completedSampling = 0;
+uint8_t ping_buffer_full = 0;
+uint8_t completed_sampling = 0;
 
 void DMA_Initialize(void) 
 { 
@@ -62,10 +62,10 @@ void DMA_Initialize(void)
     DMA0CNT = NUM_SAMP - 1;
     DMA0PAD = (volatile unsigned int)&ADC1BUF0;
     
-	DMA0STAL = __builtin_dmaoffset(pingBuffer);	
+	DMA0STAL = __builtin_dmaoffset(ping_buffer);	
     DMA0STAH = 0x0000;
     
-	DMA0STBL = __builtin_dmaoffset(pongBuffer);
+	DMA0STBL = __builtin_dmaoffset(pong_buffer);
     DMA0STBH = 0x0000;
     
     IFS0bits.DMA0IF = false;    // Clearing Channel 0 Interrupt Flag;
@@ -76,8 +76,8 @@ void DMA_Initialize(void)
 
 void __attribute__ ( ( interrupt, no_auto_psv ) ) _DMA0Interrupt( void )
 {
-    completedSampling = YES;
-    pingBufferFull ^= 1;
+    completed_sampling = YES;
+    ping_buffer_full ^= 1;
     IFS0bits.DMA0IF = 0;
 }
 
