@@ -59,6 +59,7 @@ int main(int argc, char** argv) {
                 VectorSubtract(NUM_SAMP, ping_buffer, ping_buffer, aux_vector);   //Remove dc level from signal in
                 for(i = 0; i < NUM_SAMP; i++)
                 {
+                    ping_buffer[i] = ping_buffer[i] << 3;
                     signal_in_complex[i].real = ping_buffer[i];
                     signal_in_complex[i].imag = 0;
                 }                
@@ -70,6 +71,7 @@ int main(int argc, char** argv) {
                 VectorSubtract(NUM_SAMP, pong_buffer, pong_buffer, aux_vector);   //Remove dc level from signal in
                 for(i = 0; i < NUM_SAMP; i++)
                 {
+                    pong_buffer[i] = pong_buffer[i] << 3;
                     signal_in_complex[i].real = pong_buffer[i];
                     signal_in_complex[i].imag = 0;
                 }                              
