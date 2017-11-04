@@ -14,7 +14,7 @@ void GrandkeFreqInterpolation(uint16_t peakFreqBin, fractional *spectrumAbsVecto
 {
     float delta;
     float alfa;
-    float resolution = ((float)SAMPLING_RATE / NUM_SAMP);
+    float resolution = ((float)SAMPLING_RATE / (NUM_SAMP+NUM_ZEROS));
     uint16_t secondPeakFreqBin;
     uint8_t secondPeakBinAfter;
     

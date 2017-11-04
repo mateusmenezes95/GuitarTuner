@@ -13,8 +13,9 @@
 
 
 #define NUM_SAMP 512
-#define LOG2_NUM_SAMP 9
-#define SAMPLING_RATE 2000
+#define NUM_ZEROS 512
+#define LOG2_NUM_SAMP 10
+#define SAMPLING_RATE 4000
 
 enum sampleStatus{NO, YES};
 
