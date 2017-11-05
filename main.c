@@ -13,6 +13,7 @@
 
 extern fractional ping_buffer[NUM_SAMP];
 extern fractional pong_buffer[NUM_SAMP];
+extern float guitar_notes[NUM_NOTES];
 
 fractcomplex signal_in_complex[NUM_SAMP+NUM_ZEROS]
 __attribute__ ((eds, space(ymemory), aligned ((NUM_SAMP+NUM_ZEROS) * 2 *2)));
@@ -34,6 +35,8 @@ fractional average_constant;
 fractional aux_vector[NUM_SAMP];
 fractional average_vector[NUM_SAMP];
 fractional signal_in_dc_level = 0;
+noteFeatures note_in
+__attribute__((far,aligned));
 
 int i = 0;
 
@@ -86,6 +89,7 @@ int main(int argc, char** argv) {
             signal_in_Abs[0] = 0;
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
+            NoteDetect(peak_frequency, &note_in);
             int x = 0;
             
         }
