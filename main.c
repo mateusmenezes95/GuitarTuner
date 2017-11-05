@@ -90,6 +90,7 @@ int main(int argc, char** argv) {
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
             NoteDetect(peak_frequency, &note_in);
+            ShowNote(&note_in);
             int x = 0;
             
         }

@@ -150,3 +150,45 @@ void NoteDetect(float freq_value, noteFeatures *note)
     int x = 0;
 }
 
+void ShowNote(noteFeatures *note)
+{
+    switch(note->tuning)
+    {
+        case BELOW:
+            BlueLed_SetLow();
+            break;
+        case ABOVE:
+            BlueLed_SetHigh();
+            break;
+    }
+    
+    
+    switch(note->tuning_interval)
+    {
+        case A:
+            WhiteLed_SetHigh();
+            GreenLed_SetLow();
+            YellowLed_SetLow();
+            RedLed_SetLow();
+            break;
+        case B:
+            WhiteLed_SetLow();
+            GreenLed_SetHigh();
+            YellowLed_SetLow();
+            RedLed_SetLow();
+            break;
+        case C:
+            WhiteLed_SetLow();
+            GreenLed_SetLow();
+            YellowLed_SetHigh();
+            RedLed_SetLow();
+            break;
+        case D:
+            WhiteLed_SetLow();
+            GreenLed_SetLow();
+            YellowLed_SetLow();
+            RedLed_SetHigh();
+            break;
+    }
+}
+

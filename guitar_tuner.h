@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <math.h>
 #include "dsp.h"
+#include "mcc_generated_files/pin_manager.h"
 
 
 #define NUM_SAMP 512
