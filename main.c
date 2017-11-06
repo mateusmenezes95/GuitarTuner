@@ -89,8 +89,18 @@ int main(int argc, char** argv) {
             signal_in_Abs[0] = 0;
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
-            NoteDetect(peak_frequency, &note_in);
-            ShowNote(&note_in);
+            
+            if(peak_frequency < 500.0)
+            {
+                TMR1_Start();
+                NoteDetect(peak_frequency, &note_in);
+                ShowNote(&note_in);
+            }
+            else
+            {
+                TMR1_Stop();
+            }
+            
             int x = 0;
             
         }
