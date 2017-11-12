@@ -147,7 +147,6 @@ void NoteDetect(float freq_value, noteFeatures *note)
         else if(freq_value >= c && freq_value <= up_limit)
             note->tuning_interval = D;
     }
-    int x = 0;
 }
 
 void ShowNote(noteFeatures *note)

@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
                 VectorWindow(NUM_SAMP, ping_buffer, ping_buffer, hanning_window);
                 for(i = 0; i < NUM_SAMP; i++)
                 {
-                    ping_buffer[i] = ping_buffer[i] << 3;
+                    ping_buffer[i] = ping_buffer[i] << 3;           
                     signal_in_complex[i].real = ping_buffer[i];
                     signal_in_complex[i].imag = 0;
                 }              
@@ -92,17 +92,11 @@ int main(int argc, char** argv) {
             
             if(peak_frequency < 500.0)
             {
-                TMR1_Start();
+//                TMR1_Start();
                 NoteDetect(peak_frequency, &note_in);
                 ShowNote(&note_in);
-            }
-            else
-            {
-                TMR1_Stop();
-            }
-            
-            int x = 0;
-            
+            }            
+            int x = 0;  
         }
     }
     return 1;
