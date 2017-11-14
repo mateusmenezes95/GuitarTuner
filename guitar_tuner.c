@@ -155,10 +155,10 @@ void ShowNote(noteFeatures *note)
     switch(note->tuning)
     {
         case BELOW:
-            BlueLed_SetLow();
+//            BlueLed_SetLow();
             break;
         case ABOVE:
-            BlueLed_SetHigh();
+//            BlueLed_SetHigh();
             break;
     }
     
@@ -166,28 +166,28 @@ void ShowNote(noteFeatures *note)
     switch(note->tuning_interval)
     {
         case A:
-            WhiteLed_SetHigh();
-            GreenLed_SetLow();
-            YellowLed_SetLow();
-            RedLed_SetLow();
+//            WhiteLed_SetHigh();
+//            GreenLed_SetLow();
+//            YellowLed_SetLow();
+//            RedLed_SetLow();
             break;
         case B:
-            WhiteLed_SetLow();
-            GreenLed_SetHigh();
-            YellowLed_SetLow();
-            RedLed_SetLow();
+//            WhiteLed_SetLow();
+//            GreenLed_SetHigh();
+//            YellowLed_SetLow();
+//            RedLed_SetLow();
             break;
         case C:
-            WhiteLed_SetLow();
-            GreenLed_SetLow();
-            YellowLed_SetHigh();
-            RedLed_SetLow();
+//            WhiteLed_SetLow();
+//            GreenLed_SetLow();
+//            YellowLed_SetHigh();
+//            RedLed_SetLow();
             break;
         case D:
-            WhiteLed_SetLow();
-            GreenLed_SetLow();
-            YellowLed_SetLow();
-            RedLed_SetHigh();
+//            WhiteLed_SetLow();
+//            GreenLed_SetLow();
+//            YellowLed_SetLow();
+//            RedLed_SetHigh();
             break;
     }
 }

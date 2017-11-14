@@ -151,7 +151,7 @@ uint16_t TMR1_Counter16BitGet( void )
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
     // Add your custom callback code here
-    LED_Toggle();
+//    LED_Toggle();
 }
 
 void TMR1_Start( void )

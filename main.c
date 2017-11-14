@@ -10,6 +10,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "guitar_tuner.h"
 #include <math.h>
+#include "lcd.h"
 
 extern fractional ping_buffer[NUM_SAMP];
 extern fractional pong_buffer[NUM_SAMP];
@@ -43,6 +44,14 @@ int i = 0;
 int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
+    LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
+    LcdWriteChar('\f');
+    LcdPlaceText(3,0);
+    char t[] = "GuitarTuner"; 
+//    LcdSendByte(1,t);
+    LcdWriteString(t);
+    LcdPlaceText(4,1);
+    LcdWriteString("Funfando!");
     AD1CON1bits.ADON = 1;
     
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
@@ -94,7 +103,7 @@ int main(int argc, char** argv) {
             {
                 TMR1_Start();
                 NoteDetect(peak_frequency, &note_in);
-                ShowNote(&note_in);
+//                ShowNote(&note_in);
             }
             else
             {
