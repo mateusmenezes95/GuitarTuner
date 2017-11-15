@@ -103,11 +103,6 @@ int main(int argc, char** argv) {
             {
 //                TMR1_Start();
                 NoteDetect(peak_frequency, &note_in);
-<<<<<<< HEAD
-                ShowNote(&note_in);
-            }            
-            int x = 0;  
-=======
 //                ShowNote(&note_in);
             }
             else
@@ -116,8 +111,6 @@ int main(int argc, char** argv) {
             }
             
             int x = 0;
-            
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171
         }
     }
     return 1;
