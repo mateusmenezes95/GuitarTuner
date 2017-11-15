@@ -9,14 +9,27 @@
 #define	GUITAR_TUNER_H
 
 #include <stdint.h>
+#include <math.h>
 #include "dsp.h"
+#include "mcc_generated_files/pin_manager.h"
 
 
 #define NUM_SAMP 512
-#define LOG2_NUM_SAMP 9
+#define NUM_ZEROS 512
+#define NUM_NOTES 36
+#define LOG2_NUM_SAMP 10
 #define SAMPLING_RATE 4000
 
 enum sampleStatus{NO, YES};
+enum tuningDistance{BELOW, ABOVE};
+enum tuningInterval{A, B, C, D};
+
+typedef struct note_features
+{
+    uint8_t note_index;
+    uint8_t tuning;
+    uint8_t tuning_interval;
+}noteFeatures;
 
 /**
   @Summary
@@ -59,6 +72,26 @@ void GrandkeFreqInterpolation (uint16_t peakFreqBin, fractional* spectrumAbsVect
 */
 
 void FillVector(uint16_t vectorSize, fractional *vector2Fill, fractional data);
+
+/**
+  @Summary
+    Updates 16-bit timer value
+
+  @Description
+    This routine detect what note was played and how is its frequency
+ regarding the correct tuning 
+
+  @Param
+    freq_value - Frequency from FFT
+    note - Struct with note features
+
+  @Returns
+    None
+ 
+  @Example 
+  
+*/
+void NoteDetect(float freq_value, noteFeatures *note);
 
 #endif	/* GUITAR_TUNER_H */
 
