@@ -3,7 +3,7 @@
 #include <libpic30.h>
 #include "mcc_generated_files/pin_manager.h"
 
-static char mode_lcd2;
+static char mode_lcd;
 
 void LcdSendNibble(char data)
 {
@@ -49,13 +49,14 @@ void LcdInitialize(char mode1, char mode2)
     }
     
     LcdSendNibble(0x02);
-    LcdSendByte(0, 0x20 | mode1);
-    LcdSendByte(0, 0x08 | mode2);
     
-    mode_lcd2 = 0x08 | mode2;
+    LcdSendByte(COMMAND, LCD_FUNCTION_SET | mode1);
+    LcdSendByte(COMMAND, LCD_DISPLAY_CONTROL | mode2);
     
-    LcdSendByte(0, 0x01);
-    LcdSendByte(0, 0x06);
+    mode_lcd = LCD_DISPLAY_CONTROL | mode2;
+    
+    LcdSendByte(COMMAND, LCD_CLEAR_DISPLAY);
+    LcdSendByte(COMMAND, LCD_ENTRY_LEFT | LCD_ENTRY_SHIFT_DECREMENT | LCD_ENTRY_MODE_SET);
 }
 
 void LcdPlaceText(uint8_t x, uint8_t y)
@@ -68,34 +69,61 @@ void LcdPlaceText(uint8_t x, uint8_t y)
         address = 0;
     
     address += x - 1;
-    LcdSendByte(0, 0x80 | address);
+    LcdSendByte(0, LCD_SET_DDRAM_ADDR | address);
 }
 
-void LcdWriteChar(uint8_t c)
+void LcdPrintChar(uint8_t c)
 {
-    switch(c)
-    {
-        case '\f':
-            LcdSendByte(0, 0x01);
-            __delay_ms(5);
-            break;
-        case '\n':
-//            break;
-        case '\r':
-            LcdPlaceText(1,2);
-            break;
-        default:
-            LcdSendByte(1, 0x0C);
-    }
+    LcdSendByte(DATA, c);
 }
 
-void LcdWriteString(uint8_t *c)
+void LcdPrintString(uint8_t *c)
 {
     while(*c != '\0')
     {
-        LcdSendByte(1, *c);
+        LcdSendByte(DATA, *c);
         c++;
     }
 }
 
+void LcdClear()
+{
+    LcdSendByte(COMMAND, LCD_CLEAR_DISPLAY);
+    __delay_ms(5);
+}
 
+void LcdTurnOn()
+{
+    mode_lcd |= LCD_DISPLAY_ON;
+    LcdSendByte(COMMAND, mode_lcd);
+}
+
+void LcdTurnOff()
+{
+    mode_lcd &= ~LCD_DISPLAY_ON;
+    LcdSendByte(COMMAND, mode_lcd);
+}
+
+void LcdTurnOnCursor()
+{
+    mode_lcd |= LCD_CURSOR_ON;
+    LcdSendByte(COMMAND, mode_lcd);
+}
+
+void LcdTurnOffCursor()
+{
+    mode_lcd &= ~LCD_CURSOR_ON;
+    LcdSendByte(COMMAND, mode_lcd);
+}
+
+void LcdTurnOnCursorBlink()
+{
+    mode_lcd |= LCD_CURSOR_BLINK;
+    LcdSendByte(COMMAND, mode_lcd);    
+}
+
+void LcdTurnOffCursorBlink()
+{
+    mode_lcd &= ~LCD_CURSOR_BLINK;
+    LcdSendByte(COMMAND, mode_lcd);    
+}

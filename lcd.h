@@ -21,16 +21,35 @@
 #define lcd_d7 LATCbits.LATC2
 
 #define LCD_SECOND_LINE 0x40
+
+#define LCD_CLEAR_DISPLAY   0x01
+#define LCD_RETUR_NHOME     0x02
+#define LCD_ENTRY_MODE_SET  0x04
+#define LCD_DISPLAY_CONTROL 0x08
+#define LCD_CURSOR_SHIFT    0x10
+#define LCD_FUNCTION_SET    0x20
+#define LCD_SET_CGRAM_ADDR  0x40
+#define LCD_SET_DDRAM_ADDR  0x80
+
+#define COMMAND 0
+#define DATA    1
+
 #define LCD_CURSOR_ON 0x02
 #define LCD_CURSOR_OFF 0x00
 #define LCD_CURSOR_BLINK 0x01
 #define LCD_CURSOR_FIXED 0x00
 #define LCD_DISPLAY_ON 0x04
 #define LCD_DISPLAY_OFF 0x00
+
 #define LCD_DISPLAY_8X5 0x00
 #define LCD_DISPLAY_10X5 0x04
 #define LCD_2_LINES 0x08
 #define LCD_1_LINE 0x00
+
+#define LCD_ENTRY_RIGHT          0x00
+#define LCD_ENTRY_LEFT           0x02
+#define LCD_ENTRY_SHIFT_INCREMENT 0x01
+#define LCD_ENTRY_SHIFT_DECREMENT 0x00
 
 typedef union
 {
@@ -51,16 +70,13 @@ typedef union
 
 /**
   @Summary
-    Updates 16-bit timer value
+    Send low Nibble
 
   @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
+    Send LSbits to display 
 
   @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
+    data - Data to send
 
   @Returns
     None
@@ -153,7 +169,7 @@ void LcdPlaceText(uint8_t x, uint8_t y);
   @Example 
   
 */
-void LcdWriteChar(uint8_t c);
+void LcdPrintChar(uint8_t c);
 
 /**
   @Summary
@@ -174,7 +190,28 @@ void LcdWriteChar(uint8_t c);
   @Example 
   
 */
-void LcdWriteString(uint8_t *c);
+void LcdPrintString(uint8_t *c);
+
+/**
+  @Summary
+    Updates 16-bit timer value
+
+  @Description
+    This routine uses the Grandke interpolation frequency algorithm to compute 
+ the approximate true peak frequency of a spectrum
+
+  @Param
+    peakFreqBin - The bin of greatest frequency of spectrum
+    spectrumAbsVector - The vector with the frequency spectrum magnitude
+    trueValueFreq - The variable address to store the approximate true peak frequency
+
+  @Returns
+    None
+ 
+  @Example 
+  
+*/
+void LcdClear(void);
 
 /**
   @Summary
