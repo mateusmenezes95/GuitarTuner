@@ -45,13 +45,15 @@ int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
     LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
-    LcdWriteChar('\f');
+    LcdClear();
+    LcdPlaceText(1,0);
+    LcdPrintChar(BLACK_SQUARE);
+    LcdPlaceText(16,0);
+    LcdPrintChar(BLACK_SQUARE);
     LcdPlaceText(3,0);
-    char t[] = "GuitarTuner"; 
-//    LcdSendByte(1,t);
-    LcdWriteString(t);
+    LcdPrintString("GuitarTuner");
     LcdPlaceText(4,1);
-    LcdWriteString("Funfando!");
+    LcdPrintString("Funfando!");
     AD1CON1bits.ADON = 1;
     
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
