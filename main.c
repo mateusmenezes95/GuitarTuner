@@ -45,15 +45,15 @@ int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
     LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
-    LcdClear();
-    LcdPlaceText(1,0);
-    LcdPrintChar(BLACK_SQUARE);
-    LcdPlaceText(16,0);
-    LcdPrintChar(BLACK_SQUARE);
-    LcdPlaceText(3,0);
-    LcdPrintString("GuitarTuner");
-    LcdPlaceText(4,1);
-    LcdPrintString("Funfando!");
+//    LcdClear();
+//    LcdPlaceText(8,FIRST_LINE);
+//    LcdPrintString("E#");
+//    LcdPlaceText(7,SECOND_LINE);
+//    char t[9] = {255, 255, 255, 1, 1, 255, 255, 255, '\0'};
+//    LcdTextRight2Left();
+//    for(i = 0; i < B; i++)
+//        LcdSendByte(DATA, 255);
+//    LcdPrintString(t);
     AD1CON1bits.ADON = 1;
     
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
@@ -66,28 +66,29 @@ int main(int argc, char** argv) {
         if(completed_sampling)
         {
             completed_sampling = NO;
+            Pin_Toggle();
             if(ping_buffer_full)
             {
-                signal_in_dc_level = VectorDotProduct(NUM_SAMP, ping_buffer, average_vector);
-                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
-                VectorSubtract(NUM_SAMP, ping_buffer, ping_buffer, aux_vector);   //Remove dc level from signal in
+//                signal_in_dc_level = VectorDotProduct(NUM_SAMP, ping_buffer, average_vector);
+//                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
+//                VectorSubtract(NUM_SAMP, ping_buffer, ping_buffer, aux_vector);   //Remove dc level from signal in
                 VectorWindow(NUM_SAMP, ping_buffer, ping_buffer, hanning_window);
                 for(i = 0; i < NUM_SAMP; i++)
                 {
-                    ping_buffer[i] = ping_buffer[i] << 3;           
+                    ping_buffer[i] = ping_buffer[i] >> 1;           
                     signal_in_complex[i].real = ping_buffer[i];
                     signal_in_complex[i].imag = 0;
                 }              
             }
             else
             {
-                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pong_buffer, average_vector);
-                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
-                VectorSubtract(NUM_SAMP, pong_buffer, pong_buffer, aux_vector);   //Remove dc level from signal in
+//                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pong_buffer, average_vector);
+//                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
+//                VectorSubtract(NUM_SAMP, pong_buffer, pong_buffer, aux_vector);   //Remove dc level from signal in
                 VectorWindow(NUM_SAMP, pong_buffer, pong_buffer, hanning_window);
                 for(i = 0; i < NUM_SAMP; i++)
                 {
-                    pong_buffer[i] = pong_buffer[i] << 3;
+                    pong_buffer[i] = pong_buffer[i] >> 1;
                     signal_in_complex[i].real = pong_buffer[i];
                     signal_in_complex[i].imag = 0;
                 }                              
@@ -103,13 +104,14 @@ int main(int argc, char** argv) {
             
             if(peak_frequency < 500.0)
             {
-//                TMR1_Start();
                 NoteDetect(peak_frequency, &note_in);
-//                ShowNote(&note_in);
+                ShowNote(&note_in);
             }
             else
             {
-                TMR1_Stop();
+                LcdClear();
+                LcdPlaceText(3,FIRST_LINE);
+                LcdPrintString("Unknown freq");
             }
             
             int x = 0;
