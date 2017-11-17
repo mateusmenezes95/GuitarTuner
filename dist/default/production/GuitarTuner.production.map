@@ -69,14 +69,10 @@ Archive member included because of file (symbol)
                               build/default/production/main.o (_TwidFactorInit)
 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
                               /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj) (_STACK_GUARD)
-/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vdot.obj)
-                              build/default/production/main.o (_VectorDotProduct)
 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
                               build/default/production/main.o (_VectorMax)
 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmul.obj)
                               /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_dowindow.obj) (_VectorMultiply)
-/opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vsub.obj)
-                              build/default/production/main.o (_VectorSubtract)
 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vzpad.obj)
                               build/default/production/main.o (_VectorZeroPad)
 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vcopy.obj)
@@ -172,24 +168,15 @@ Program Memory  [Origin = 0x200, Length = 0x155ec]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-.text                        0x200               0xd7a          0x1437  (5175)
-.text                        0xf7a               0x7d4           0xbbe  (3006)
-.dinit                      0x174e                0xc0           0x120  (288)
-.text                       0x180e               0x22e           0x345  (837)
+.text                        0x200               0xcfe          0x137d  (4989)
+.const                       0xefe                0x2c            0x42  (66)
+.text                        0xf2a               0xafe          0x107d  (4221)
+.dinit                      0x1a28                0xc6           0x129  (297)
+.text                       0x1aee               0x20c           0x312  (786)
+.init.delay32               0x1cfa                0x1c            0x2a  (42)
+.text                       0x1d16                0x2a            0x3f  (63)
 
-                 Total program memory used (bytes):         0x245a  (9306) 7%
-=======
-.text                        0x200               0xd44          0x13e6  (5094)
-.const                       0xf44                 0xa             0xf  (15)
-.text                        0xf4e               0x9f6           0xef1  (3825)
-.dinit                      0x1944                0xc6           0x129  (297)
-.text                       0x1a0a               0x15a           0x207  (519)
-.init.delay32               0x1b64                0x1c            0x2a  (42)
-.text                       0x1b80                0x34            0x4e  (78)
-
-                 Total program memory used (bytes):         0x268e  (9870) 7%
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                 Total program memory used (bytes):         0x28e0  (10464) 7%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x1fc]
@@ -203,7 +190,6 @@ section                    address   length (PC units)   length (bytes) (dec)
 .ivt._MathError                0xc                 0x2             0x3  (3)
 .ivt._DMACError                0xe                 0x2             0x3  (3)
 .ivt._SoftTrapError           0x10                 0x2             0x3  (3)
-.ivt._T1Interrupt             0x1a                 0x2             0x3  (3)
 .ivt._DMA0Interrupt           0x1c                 0x2             0x3  (3)
 
 
@@ -213,27 +199,15 @@ section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .nbss                       0x1000                   0             0xe  (14)
 .ndata                      0x100e                   0             0x2  (2)
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-.nbss                       0x1010                   0             0x6  (6)
-.data                       0x1016                   0            0x90  (144)
-.bss                        0x10a6                   0            0x20  (32)
-_0xf6b9c05c5a0861be         0x10c6                   0             0x4  (4)
-.bss                        0x10ca                   0             0x4  (4)
-.data                       0x10ce                   0             0x2  (2)
-.xbss                       0x1800                   0           0x800  (2048)
-.bss                        0x2000                   0          0x1000  (4096)
-_0xf6c1fb805a0861be         0x3000                   0          0x1000  (4096)
-=======
 .nbss                       0x1010                   0             0x8  (8)
 .data                       0x1018                   0            0x90  (144)
 .bss                        0x10a8                   0            0x20  (32)
-_0xf6b3905c5a0a3fa1         0x10c8                   0             0x4  (4)
+_0xf6b9005c5a0f4647         0x10c8                   0             0x4  (4)
 .bss                        0x10cc                   0             0x4  (4)
 .data                       0x10d0                   0             0x2  (2)
 .xbss                       0x1800                   0           0x800  (2048)
 .bss                        0x2000                   0          0x1000  (4096)
-_0xf6bb7b805a0a3fa1         0x3000                   0          0x1000  (4096)
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+_0xf6c0db805a0f4647         0x3000                   0          0x1000  (4096)
 .bss                        0x4000                   0           0x800  (2048)
 
                  Total data memory used (bytes):         0x30d2  (12498) 76%
@@ -306,101 +280,6 @@ External Symbols in Program Memory (by address):
                   0x00031c                  __DMACError
                   0x000324                  __HardTrapError
                   0x00032c                  __SoftTrapError
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-                  0x00034e                  __DMA0Interrupt
-                  0x000364                  __T1Interrupt
-                  0x000392                  __DefaultInterrupt
-                  0x000396                  _Float2Fract
-                  0x000528                  _HanningInit
-                  0x000578                  _TwidFactorInit
-                  0x0006f2                  _VectorMax
-                  0x000712                  _VectorZeroPad
-                  0x000732                  _VectorSubtract
-                  0x000758                  _VectorDotProduct
-                  0x000778                  _VectorWindow
-                  0x00077e                  _FFTComplexIP
-                  0x00088a                  _BitReverseComplex
-                  0x0008c6                  _SquareMagnitudeCplx
-                  0x0008fa                  _VectorCopy
-                  0x00090c                  _VectorMultiply
-                  0x000930                  ___subsf3
-                  0x000932                  ___addsf3
-                  0x0009ec                  _ceilf
-                  0x0009fc                  _cosf
-                  0x000a00                  ___divsf3
-                  0x000a84                  __fchop
-                  0x000ad2                  ___lesf2
-                  0x000ad2                  ___eqsf2
-                  0x000ad2                  ___ltsf2
-                  0x000ad6                  ___gtsf2
-                  0x000ad6                  ___gesf2
-                  0x000ada                  ___fixsfsi
-                  0x000b1c                  ___fixunssfsi
-                  0x000b52                  ___floatsisf
-                  0x000b58                  ___floatunsisf
-                  0x000b5c                  _floorf
-                  0x000b6c                  ___nesf2
-                  0x000b70                  __fpack
-                  0x000bbc                  __funpack
-                  0x000be6                  __funpack2
-                  0x000bf6                  __fPropagateNaN
-                  0x000c08                  __fbopExit
-                  0x000c10                  __fbopReturnNaN
-                  0x000c16                  _log10f
-                  0x000c1e                  _logf
-                  0x000ccc                  ___mulsf3
-                  0x000d34                  __sincosf
-                  0x000e06                  _sinf
-                  0x000e0a                  __frexpf
-                  0x000e24                  __fcompare
-                  0x000e5a                  ___floatdisf
-                  0x000e7a                  ___floatundisf
-                  0x000ed8                  _fmodf
-                  0x000edc                  __fmodrem
-                  0x000f7a                  _GrandkeFreqInterpolation
-                  0x001030                  _FillVector
-                  0x001058                  _NoteDetect
-                  0x0013b2                  _ShowNote
-                  0x00143e                  _SYSTEM_Initialize
-                  0x00145a                  _OSCILLATOR_Initialize
-                  0x0014ac                  _SYSTEM_GetResetCause
-                  0x001506                  _SYSTEM_ResetCauseFromTrap
-                  0x00151e                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x00153a                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x001556                  _SYSTEM_ResetCauseFromExternal
-                  0x001572                  _SYSTEM_ResetCauseFromSoftware
-                  0x00158e                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0015a8                  _SYSTEM_ResetCauseClear
-                  0x0015b8                  _SYSTEM_ResetCauseClearAll
-                  0x0015c0                  _main
-                  0x00180e                  _TMR1_Initialize
-                  0x001828                  _TMR1_Period16BitSet
-                  0x00183a                  _TMR1_Period16BitGet
-                  0x001842                  _TMR1_Counter16BitSet
-                  0x001854                  _TMR1_Counter16BitGet
-                  0x001878                  _TMR1_Start
-                  0x001888                  _TMR1_Stop
-                  0x001892                  _TMR1_GetElapsedThenClear
-                  0x0018aa                  _TMR1_SoftwareCounterGet
-                  0x0018b6                  _TMR1_SoftwareCounterClear
-                  0x0018c2                  _TMR3_Initialize
-                  0x0018d8                  _TMR3_Tasks_16BitOperation
-                  0x0018fa                  _TMR3_Period16BitSet
-                  0x00190c                  _TMR3_Period16BitGet
-                  0x001914                  _TMR3_Counter16BitSet
-                  0x001926                  _TMR3_Counter16BitGet
-                  0x00192e                  _TMR3_Start
-                  0x00193c                  _TMR3_Stop
-                  0x001944                  _TMR3_GetElapsedThenClear
-                  0x00195c                  _TMR3_SoftwareCounterGet
-                  0x001968                  _TMR3_SoftwareCounterClear
-                  0x001974                  _PIN_MANAGER_Initialize
-                  0x0019aa                  _DMA_Initialize
-                  0x0019e0                  _ADC1_Initialize
-                  0x001a00                  _ADC1_Tasks
-                  0x001a08                  _INTERRUPT_Initialize
-                  0x001a38                  _SetStackGuard
-=======
                   0x00034e                  __DefaultInterrupt
                   0x000352                  _BitReverseComplex
                   0x00038e                  _SquareMagnitudeCplx
@@ -409,224 +288,182 @@ External Symbols in Program Memory (by address):
                   0x0004d4                  _Float2Fract
                   0x000678                  _HanningInit
                   0x0006c8                  _TwidFactorInit
-                  0x00083e                  _VectorDotProduct
-                  0x00085e                  _VectorMax
-                  0x00087e                  _VectorMultiply
-                  0x0008a0                  _VectorSubtract
-                  0x0008c6                  _VectorZeroPad
-                  0x0008e6                  _VectorCopy
-                  0x0008fa                  ___subsf3
-                  0x0008fc                  ___addsf3
-                  0x0009b6                  _ceilf
-                  0x0009c6                  _cosf
-                  0x0009ca                  ___divsf3
-                  0x000a4e                  __fchop
-                  0x000a9c                  ___lesf2
-                  0x000a9c                  ___eqsf2
-                  0x000a9c                  ___ltsf2
-                  0x000aa0                  ___gtsf2
-                  0x000aa0                  ___gesf2
-                  0x000aa4                  ___fixsfsi
-                  0x000ae6                  ___fixunssfsi
-                  0x000b1c                  ___floatsisf
-                  0x000b22                  ___floatunsisf
-                  0x000b26                  _floorf
-                  0x000b36                  ___nesf2
-                  0x000b3a                  __fpack
-                  0x000b86                  __funpack
-                  0x000bb0                  __funpack2
-                  0x000bc0                  __fPropagateNaN
-                  0x000bd2                  __fbopExit
-                  0x000bda                  __fbopReturnNaN
-                  0x000be0                  _log10f
-                  0x000be8                  _logf
-                  0x000c96                  ___mulsf3
-                  0x000cfe                  __sincosf
-                  0x000dd0                  _sinf
-                  0x000dd4                  __frexpf
-                  0x000dee                  __fcompare
-                  0x000e24                  ___floatdisf
-                  0x000e44                  ___floatundisf
-                  0x000ea2                  _fmodf
-                  0x000ea6                  __fmodrem
-                  0x000f4e                  _GrandkeFreqInterpolation
-                  0x001004                  _FillVector
-                  0x00102c                  _NoteDetect
-                  0x001370                  _ShowNote
-                  0x00137c                  _main
-                  0x001564                  _SYSTEM_Initialize
-                  0x001580                  _OSCILLATOR_Initialize
-                  0x0015d2                  _SYSTEM_GetResetCause
-                  0x00162c                  _SYSTEM_ResetCauseFromTrap
-                  0x001644                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x001660                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x00167c                  _SYSTEM_ResetCauseFromExternal
-                  0x001698                  _SYSTEM_ResetCauseFromSoftware
-                  0x0016b4                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0016ce                  _SYSTEM_ResetCauseClear
-                  0x0016de                  _SYSTEM_ResetCauseClearAll
-                  0x0016e6                  _LcdSendNibble
-                  0x001764                  _LcdSendByte
-                  0x00179a                  _LcdInitialize
-                  0x0017f8                  _LcdPlaceText
-                  0x001826                  _LcdWriteChar
-                  0x00185a                  _LcdWriteString
-                  0x001878                  _TMR1_Initialize
-                  0x001892                  __T1Interrupt
-                  0x0018c0                  _TMR1_Period16BitSet
-                  0x0018d2                  _TMR1_Period16BitGet
-                  0x0018da                  _TMR1_Counter16BitSet
-                  0x0018ec                  _TMR1_Counter16BitGet
-                  0x0018fa                  _TMR1_Start
-                  0x00190a                  _TMR1_Stop
-                  0x001914                  _TMR1_GetElapsedThenClear
-                  0x00192c                  _TMR1_SoftwareCounterGet
-                  0x001938                  _TMR1_SoftwareCounterClear
-                  0x001a0a                  _TMR3_Initialize
-                  0x001a20                  _TMR3_Tasks_16BitOperation
-                  0x001a42                  _TMR3_Period16BitSet
-                  0x001a54                  _TMR3_Period16BitGet
-                  0x001a5c                  _TMR3_Counter16BitSet
-                  0x001a6e                  _TMR3_Counter16BitGet
-                  0x001a76                  _TMR3_Start
-                  0x001a84                  _TMR3_Stop
-                  0x001a8c                  _TMR3_GetElapsedThenClear
-                  0x001aa4                  _TMR3_SoftwareCounterGet
-                  0x001ab0                  _TMR3_SoftwareCounterClear
-                  0x001abc                  _DMA_Initialize
-                  0x001af2                  __DMA0Interrupt
-                  0x001b08                  _PIN_MANAGER_Initialize
-                  0x001b3c                  _ADC1_Initialize
-                  0x001b5c                  _ADC1_Tasks
-                  0x001b64                  ___delay32
-                  0x001b80                  _INTERRUPT_Initialize
-                  0x001bb0                  _SetStackGuard
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x00083e                  _VectorMax
+                  0x00085e                  _VectorMultiply
+                  0x000880                  _VectorZeroPad
+                  0x0008a0                  _VectorCopy
+                  0x0008b4                  ___subsf3
+                  0x0008b6                  ___addsf3
+                  0x000970                  _ceilf
+                  0x000980                  _cosf
+                  0x000984                  ___divsf3
+                  0x000a08                  __fchop
+                  0x000a56                  ___lesf2
+                  0x000a56                  ___eqsf2
+                  0x000a56                  ___ltsf2
+                  0x000a5a                  ___gtsf2
+                  0x000a5a                  ___gesf2
+                  0x000a5e                  ___fixsfsi
+                  0x000aa0                  ___fixunssfsi
+                  0x000ad6                  ___floatsisf
+                  0x000adc                  ___floatunsisf
+                  0x000ae0                  _floorf
+                  0x000af0                  ___nesf2
+                  0x000af4                  __fpack
+                  0x000b40                  __funpack
+                  0x000b6a                  __funpack2
+                  0x000b7a                  __fPropagateNaN
+                  0x000b8c                  __fbopExit
+                  0x000b94                  __fbopReturnNaN
+                  0x000b9a                  _log10f
+                  0x000ba2                  _logf
+                  0x000c50                  ___mulsf3
+                  0x000cb8                  __sincosf
+                  0x000d8a                  _sinf
+                  0x000d8e                  __frexpf
+                  0x000da8                  __fcompare
+                  0x000dde                  ___floatdisf
+                  0x000dfe                  ___floatundisf
+                  0x000e5c                  _fmodf
+                  0x000e60                  __fmodrem
+                  0x000f2a                  _GrandkeFreqInterpolation
+                  0x000fe0                  _FillVector
+                  0x001008                  _NoteDetect
+                  0x001348                  _PrintTuningDistance
+                  0x001396                  _ShowNote
+                  0x0014de                  _LcdSendNibble
+                  0x00155c                  _LcdSendByte
+                  0x001592                  _LcdInitialize
+                  0x0015f8                  _LcdPlaceText
+                  0x001626                  _LcdPrintChar
+                  0x001636                  _LcdPrintString
+                  0x001654                  _LcdClear
+                  0x001666                  _LcdTurnOn
+                  0x00167a                  _LcdTurnOff
+                  0x00168e                  _LcdTurnOnCursor
+                  0x0016a2                  _LcdTurnOffCursor
+                  0x0016b6                  _LcdTurnOnCursorBlink
+                  0x0016ca                  _LcdTurnOffCursorBlink
+                  0x0016de                  _LcdTextRight2Left
+                  0x0016f4                  _LcdTextLeft2Right
+                  0x001730                  _SYSTEM_Initialize
+                  0x00174c                  _OSCILLATOR_Initialize
+                  0x00179e                  _SYSTEM_GetResetCause
+                  0x0017f8                  _SYSTEM_ResetCauseFromTrap
+                  0x001810                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x00182c                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x001848                  _SYSTEM_ResetCauseFromExternal
+                  0x001864                  _SYSTEM_ResetCauseFromSoftware
+                  0x001880                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x00189a                  _SYSTEM_ResetCauseClear
+                  0x0018aa                  _SYSTEM_ResetCauseClearAll
+                  0x0018b2                  _main
+                  0x001aee                  _TMR3_Initialize
+                  0x001b04                  _TMR3_Tasks_16BitOperation
+                  0x001b26                  _TMR3_Period16BitSet
+                  0x001b38                  _TMR3_Period16BitGet
+                  0x001b40                  _TMR3_Counter16BitSet
+                  0x001b52                  _TMR3_Counter16BitGet
+                  0x001b5a                  _TMR3_Start
+                  0x001b68                  _TMR3_Stop
+                  0x001b70                  _TMR3_GetElapsedThenClear
+                  0x001b88                  _TMR3_SoftwareCounterGet
+                  0x001b94                  _TMR3_SoftwareCounterClear
+                  0x001ba0                  _TMR1_Initialize
+                  0x001bb6                  _TMR1_Tasks_16BitOperation
+                  0x001bd6                  _TMR1_Period16BitSet
+                  0x001be8                  _TMR1_Period16BitGet
+                  0x001bf0                  _TMR1_Counter16BitSet
+                  0x001c02                  _TMR1_Counter16BitGet
+                  0x001c0a                  _TMR1_Start
+                  0x001c18                  _TMR1_Stop
+                  0x001c20                  _TMR1_GetElapsedThenClear
+                  0x001c38                  _TMR1_SoftwareCounterGet
+                  0x001c44                  _TMR1_SoftwareCounterClear
+                  0x001c50                  _DMA_Initialize
+                  0x001c86                  __DMA0Interrupt
+                  0x001c9c                  _PIN_MANAGER_Initialize
+                  0x001cd0                  _ADC1_Initialize
+                  0x001cf2                  _ADC1_Tasks
+                  0x001cfa                  ___delay32
+                  0x001d2c                  _INTERRUPT_Initialize
+                  0x001d3c                  _SetStackGuard
                   0x0157fa                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-                  0x0019e0                  _ADC1_Initialize
-                  0x001a00                  _ADC1_Tasks
-                  0x00088a                  _BitReverseComplex
-                  0x0019aa                  _DMA_Initialize
-                  0x00077e                  _FFTComplexIP
-                  0x001030                  _FillVector
-                  0x000396                  _Float2Fract
-                  0x000f7a                  _GrandkeFreqInterpolation
-                  0x000528                  _HanningInit
-                  0x001a08                  _INTERRUPT_Initialize
-                  0x001058                  _NoteDetect
-                  0x00145a                  _OSCILLATOR_Initialize
-                  0x001974                  _PIN_MANAGER_Initialize
-                  0x0014ac                  _SYSTEM_GetResetCause
-                  0x00143e                  _SYSTEM_Initialize
-                  0x0015a8                  _SYSTEM_ResetCauseClear
-                  0x0015b8                  _SYSTEM_ResetCauseClearAll
-                  0x00153a                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x001556                  _SYSTEM_ResetCauseFromExternal
-                  0x00151e                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x001572                  _SYSTEM_ResetCauseFromSoftware
-                  0x001506                  _SYSTEM_ResetCauseFromTrap
-                  0x00158e                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x001a38                  _SetStackGuard
-                  0x0013b2                  _ShowNote
-                  0x0008c6                  _SquareMagnitudeCplx
-                  0x001854                  _TMR1_Counter16BitGet
-                  0x001842                  _TMR1_Counter16BitSet
-                  0x001892                  _TMR1_GetElapsedThenClear
-                  0x00180e                  _TMR1_Initialize
-                  0x00183a                  _TMR1_Period16BitGet
-                  0x001828                  _TMR1_Period16BitSet
-                  0x0018b6                  _TMR1_SoftwareCounterClear
-                  0x0018aa                  _TMR1_SoftwareCounterGet
-                  0x001878                  _TMR1_Start
-                  0x001888                  _TMR1_Stop
-                  0x001926                  _TMR3_Counter16BitGet
-                  0x001914                  _TMR3_Counter16BitSet
-                  0x001944                  _TMR3_GetElapsedThenClear
-                  0x0018c2                  _TMR3_Initialize
-                  0x00190c                  _TMR3_Period16BitGet
-                  0x0018fa                  _TMR3_Period16BitSet
-                  0x001968                  _TMR3_SoftwareCounterClear
-                  0x00195c                  _TMR3_SoftwareCounterGet
-                  0x00192e                  _TMR3_Start
-                  0x00193c                  _TMR3_Stop
-                  0x0018d8                  _TMR3_Tasks_16BitOperation
-                  0x000578                  _TwidFactorInit
-                  0x0008fa                  _VectorCopy
-                  0x000758                  _VectorDotProduct
-                  0x0006f2                  _VectorMax
-                  0x00090c                  _VectorMultiply
-                  0x000732                  _VectorSubtract
-                  0x000778                  _VectorWindow
-                  0x000712                  _VectorZeroPad
-=======
-                  0x001b3c                  _ADC1_Initialize
-                  0x001b5c                  _ADC1_Tasks
+                  0x001cd0                  _ADC1_Initialize
+                  0x001cf2                  _ADC1_Tasks
                   0x000352                  _BitReverseComplex
-                  0x001abc                  _DMA_Initialize
+                  0x001c50                  _DMA_Initialize
                   0x0003c8                  _FFTComplexIP
-                  0x001004                  _FillVector
+                  0x000fe0                  _FillVector
                   0x0004d4                  _Float2Fract
-                  0x000f4e                  _GrandkeFreqInterpolation
+                  0x000f2a                  _GrandkeFreqInterpolation
                   0x000678                  _HanningInit
-                  0x001b80                  _INTERRUPT_Initialize
-                  0x00179a                  _LcdInitialize
-                  0x0017f8                  _LcdPlaceText
-                  0x001764                  _LcdSendByte
-                  0x0016e6                  _LcdSendNibble
-                  0x001826                  _LcdWriteChar
-                  0x00185a                  _LcdWriteString
-                  0x00102c                  _NoteDetect
-                  0x001580                  _OSCILLATOR_Initialize
-                  0x001b08                  _PIN_MANAGER_Initialize
-                  0x0015d2                  _SYSTEM_GetResetCause
-                  0x001564                  _SYSTEM_Initialize
-                  0x0016ce                  _SYSTEM_ResetCauseClear
-                  0x0016de                  _SYSTEM_ResetCauseClearAll
-                  0x001660                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x00167c                  _SYSTEM_ResetCauseFromExternal
-                  0x001644                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x001698                  _SYSTEM_ResetCauseFromSoftware
-                  0x00162c                  _SYSTEM_ResetCauseFromTrap
-                  0x0016b4                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x001bb0                  _SetStackGuard
-                  0x001370                  _ShowNote
+                  0x001d2c                  _INTERRUPT_Initialize
+                  0x001654                  _LcdClear
+                  0x001592                  _LcdInitialize
+                  0x0015f8                  _LcdPlaceText
+                  0x001626                  _LcdPrintChar
+                  0x001636                  _LcdPrintString
+                  0x00155c                  _LcdSendByte
+                  0x0014de                  _LcdSendNibble
+                  0x0016f4                  _LcdTextLeft2Right
+                  0x0016de                  _LcdTextRight2Left
+                  0x00167a                  _LcdTurnOff
+                  0x0016a2                  _LcdTurnOffCursor
+                  0x0016ca                  _LcdTurnOffCursorBlink
+                  0x001666                  _LcdTurnOn
+                  0x00168e                  _LcdTurnOnCursor
+                  0x0016b6                  _LcdTurnOnCursorBlink
+                  0x001008                  _NoteDetect
+                  0x00174c                  _OSCILLATOR_Initialize
+                  0x001c9c                  _PIN_MANAGER_Initialize
+                  0x001348                  _PrintTuningDistance
+                  0x00179e                  _SYSTEM_GetResetCause
+                  0x001730                  _SYSTEM_Initialize
+                  0x00189a                  _SYSTEM_ResetCauseClear
+                  0x0018aa                  _SYSTEM_ResetCauseClearAll
+                  0x00182c                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x001848                  _SYSTEM_ResetCauseFromExternal
+                  0x001810                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x001864                  _SYSTEM_ResetCauseFromSoftware
+                  0x0017f8                  _SYSTEM_ResetCauseFromTrap
+                  0x001880                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x001d3c                  _SetStackGuard
+                  0x001396                  _ShowNote
                   0x00038e                  _SquareMagnitudeCplx
-                  0x0018ec                  _TMR1_Counter16BitGet
-                  0x0018da                  _TMR1_Counter16BitSet
-                  0x001914                  _TMR1_GetElapsedThenClear
-                  0x001878                  _TMR1_Initialize
-                  0x0018d2                  _TMR1_Period16BitGet
-                  0x0018c0                  _TMR1_Period16BitSet
-                  0x001938                  _TMR1_SoftwareCounterClear
-                  0x00192c                  _TMR1_SoftwareCounterGet
-                  0x0018fa                  _TMR1_Start
-                  0x00190a                  _TMR1_Stop
-                  0x001a6e                  _TMR3_Counter16BitGet
-                  0x001a5c                  _TMR3_Counter16BitSet
-                  0x001a8c                  _TMR3_GetElapsedThenClear
-                  0x001a0a                  _TMR3_Initialize
-                  0x001a54                  _TMR3_Period16BitGet
-                  0x001a42                  _TMR3_Period16BitSet
-                  0x001ab0                  _TMR3_SoftwareCounterClear
-                  0x001aa4                  _TMR3_SoftwareCounterGet
-                  0x001a76                  _TMR3_Start
-                  0x001a84                  _TMR3_Stop
-                  0x001a20                  _TMR3_Tasks_16BitOperation
+                  0x001c02                  _TMR1_Counter16BitGet
+                  0x001bf0                  _TMR1_Counter16BitSet
+                  0x001c20                  _TMR1_GetElapsedThenClear
+                  0x001ba0                  _TMR1_Initialize
+                  0x001be8                  _TMR1_Period16BitGet
+                  0x001bd6                  _TMR1_Period16BitSet
+                  0x001c44                  _TMR1_SoftwareCounterClear
+                  0x001c38                  _TMR1_SoftwareCounterGet
+                  0x001c0a                  _TMR1_Start
+                  0x001c18                  _TMR1_Stop
+                  0x001bb6                  _TMR1_Tasks_16BitOperation
+                  0x001b52                  _TMR3_Counter16BitGet
+                  0x001b40                  _TMR3_Counter16BitSet
+                  0x001b70                  _TMR3_GetElapsedThenClear
+                  0x001aee                  _TMR3_Initialize
+                  0x001b38                  _TMR3_Period16BitGet
+                  0x001b26                  _TMR3_Period16BitSet
+                  0x001b94                  _TMR3_SoftwareCounterClear
+                  0x001b88                  _TMR3_SoftwareCounterGet
+                  0x001b5a                  _TMR3_Start
+                  0x001b68                  _TMR3_Stop
+                  0x001b04                  _TMR3_Tasks_16BitOperation
                   0x0006c8                  _TwidFactorInit
-                  0x0008e6                  _VectorCopy
-                  0x00083e                  _VectorDotProduct
-                  0x00085e                  _VectorMax
-                  0x00087e                  _VectorMultiply
-                  0x0008a0                  _VectorSubtract
+                  0x0008a0                  _VectorCopy
+                  0x00083e                  _VectorMax
+                  0x00085e                  _VectorMultiply
                   0x0003c2                  _VectorWindow
-                  0x0008c6                  _VectorZeroPad
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x000880                  _VectorZeroPad
                   0x00030c                  __AddressError
-                  0x001af2                  __DMA0Interrupt
+                  0x001c86                  __DMA0Interrupt
                   0x00031c                  __DMACError
                   0x00034e                  __DefaultInterrupt
                   0x0157fa                  __FGS.sec
@@ -635,59 +472,46 @@ External Symbols in Program Memory (by name):
                   0x0002fa                  __OscillatorFail
                   0x00032c                  __SoftTrapError
                   0x000302                  __StackError
-                  0x001892                  __T1Interrupt
-                  0x0008fc                  ___addsf3
-                  0x001b64                  ___delay32
-                  0x0009ca                  ___divsf3
-                  0x000a9c                  ___eqsf2
-                  0x000aa4                  ___fixsfsi
-                  0x000ae6                  ___fixunssfsi
-                  0x000e24                  ___floatdisf
-                  0x000b1c                  ___floatsisf
-                  0x000e44                  ___floatundisf
-                  0x000b22                  ___floatunsisf
-                  0x000aa0                  ___gesf2
-                  0x000aa0                  ___gtsf2
-                  0x000a9c                  ___lesf2
-                  0x000a9c                  ___ltsf2
-                  0x000c96                  ___mulsf3
-                  0x000b36                  ___nesf2
-                  0x0008fa                  ___subsf3
+                  0x0008b6                  ___addsf3
+                  0x001cfa                  ___delay32
+                  0x000984                  ___divsf3
+                  0x000a56                  ___eqsf2
+                  0x000a5e                  ___fixsfsi
+                  0x000aa0                  ___fixunssfsi
+                  0x000dde                  ___floatdisf
+                  0x000ad6                  ___floatsisf
+                  0x000dfe                  ___floatundisf
+                  0x000adc                  ___floatunsisf
+                  0x000a5a                  ___gesf2
+                  0x000a5a                  ___gtsf2
+                  0x000a56                  ___lesf2
+                  0x000a56                  ___ltsf2
+                  0x000c50                  ___mulsf3
+                  0x000af0                  ___nesf2
+                  0x0008b4                  ___subsf3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
-                  0x000bc0                  __fPropagateNaN
-                  0x000bd2                  __fbopExit
-                  0x000bda                  __fbopReturnNaN
-                  0x000a4e                  __fchop
-                  0x000dee                  __fcompare
-                  0x000ea6                  __fmodrem
-                  0x000b3a                  __fpack
-                  0x000dd4                  __frexpf
-                  0x000b86                  __funpack
-                  0x000bb0                  __funpack2
+                  0x000b7a                  __fPropagateNaN
+                  0x000b8c                  __fbopExit
+                  0x000b94                  __fbopReturnNaN
+                  0x000a08                  __fchop
+                  0x000da8                  __fcompare
+                  0x000e60                  __fmodrem
+                  0x000af4                  __fpack
+                  0x000d8e                  __frexpf
+                  0x000b40                  __funpack
+                  0x000b6a                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-                  0x000d34                  __sincosf
-                  0x0009ec                  _ceilf
-                  0x0009fc                  _cosf
-                  0x000b5c                  _floorf
-                  0x000ed8                  _fmodf
-                  0x000c16                  _log10f
-                  0x000c1e                  _logf
-                  0x0015c0                  _main
-                  0x000e06                  _sinf
-=======
-                  0x000cfe                  __sincosf
-                  0x0009b6                  _ceilf
-                  0x0009c6                  _cosf
-                  0x000b26                  _floorf
-                  0x000ea2                  _fmodf
-                  0x000be0                  _log10f
-                  0x000be8                  _logf
-                  0x00137c                  _main
-                  0x000dd0                  _sinf
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x000cb8                  __sincosf
+                  0x000970                  _ceilf
+                  0x000980                  _cosf
+                  0x000ae0                  _floorf
+                  0x000e5c                  _fmodf
+                  0x000b9a                  _log10f
+                  0x000ba2                  _logf
+                  0x0018b2                  _main
+                  0x000d8a                  _sinf
 
 Memory Configuration
 
@@ -749,7 +573,7 @@ LOAD /opt/microchip/xc16/v1.31/bin/bin/../../lib/libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0xd44
+.text             0x000200        0xcfe
  *(.init)
  .init            0x000200         0x48 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __reset
@@ -789,97 +613,93 @@ LOAD /opt/microchip/xc16/v1.31/bin/bin/../../lib/libfx-elf.a
                   0x000678                  _HanningInit
  .libdsp          0x0006c8        0x176 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
                   0x0006c8                  _TwidFactorInit
- .libdsp          0x00083e         0x20 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vdot.obj)
-                  0x00083e                  _VectorDotProduct
- .libdsp          0x00085e         0x20 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
-                  0x00085e                  _VectorMax
- .libdsp          0x00087e         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmul.obj)
-                  0x00087e                  _VectorMultiply
- .libdsp          0x0008a0         0x26 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vsub.obj)
-                  0x0008a0                  _VectorSubtract
- .libdsp          0x0008c6         0x20 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vzpad.obj)
-                  0x0008c6                  _VectorZeroPad
- .libdsp          0x0008e6         0x12 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vcopy.obj)
-                  0x0008e6                  _VectorCopy
+ .libdsp          0x00083e         0x20 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
+                  0x00083e                  _VectorMax
+ .libdsp          0x00085e         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmul.obj)
+                  0x00085e                  _VectorMultiply
+ .libdsp          0x000880         0x20 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vzpad.obj)
+                  0x000880                  _VectorZeroPad
+ .libdsp          0x0008a0         0x12 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vcopy.obj)
+                  0x0008a0                  _VectorCopy
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x0008f8          0x2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
-                  0x0008f8                  __crt_start_mode_normal
-                  0x0008f8                  __crt_start_mode
- .libm.subsf3     0x0008fa         0xbc /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
-                  0x0008fa                  ___subsf3
-                  0x0008fc                  ___addsf3
- .libm.ceilf      0x0009b6         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
-                  0x0009b6                  _ceilf
- .libm.cosf       0x0009c6          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
-                  0x0009c6                  _cosf
- .libm.divfs3     0x0009ca         0x84 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
-                  0x0009ca                  ___divsf3
- .libm.fchop      0x000a4e         0x4e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
-                  0x000a4e                  __fchop
- .libm.eqsf2      0x000a9c          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
-                  0x000a9c                  ___lesf2
-                  0x000a9c                  ___eqsf2
-                  0x000a9c                  ___ltsf2
- .libm.gtsf2      0x000aa0          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
-                  0x000aa0                  ___gtsf2
-                  0x000aa0                  ___gesf2
- .libm.fixsfsi    0x000aa4         0x42 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
-                  0x000aa4                  _(float, int, long long, short, float, short, int)
+                  0x0008b2          0x2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
+                  0x0008b2                  __crt_start_mode_normal
+                  0x0008b2                  __crt_start_mode
+ .libm.subsf3     0x0008b4         0xbc /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
+                  0x0008b4                  ___subsf3
+                  0x0008b6                  ___addsf3
+ .libm.ceilf      0x000970         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
+                  0x000970                  _ceilf
+ .libm.cosf       0x000980          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
+                  0x000980                  _cosf
+ .libm.divfs3     0x000984         0x84 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                  0x000984                  ___divsf3
+ .libm.fchop      0x000a08         0x4e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
+                  0x000a08                  __fchop
+ .libm.eqsf2      0x000a56          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
+                  0x000a56                  ___lesf2
+                  0x000a56                  ___eqsf2
+                  0x000a56                  ___ltsf2
+ .libm.gtsf2      0x000a5a          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
+                  0x000a5a                  ___gtsf2
+                  0x000a5a                  ___gesf2
+ .libm.fixsfsi    0x000a5e         0x42 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
+                  0x000a5e                  _(float, int, long long, short, float, short, int)
  .libm.fixunssfsi
-                  0x000ae6         0x36 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
-                  0x000ae6                  ___fixunssfsi
+                  0x000aa0         0x36 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
+                  0x000aa0                  ___fixunssfsi
  .libm.floatsisf
-                  0x000b1c          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
-                  0x000b1c                  ___floatsisf
+                  0x000ad6          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                  0x000ad6                  ___floatsisf
  .libm.floatunsisf
-                  0x000b22          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
-                  0x000b22                  ___floatunsisf
- .libm.floorf     0x000b26         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
-                  0x000b26                  _floorf
- .libm.nesf2      0x000b36          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
-                  0x000b36                  ___nesf2
- .libm.fpack      0x000b3a         0x4c /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
-                  0x000b3a                  __fpack
- .libm.funpack    0x000b86         0x2a /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
-                  0x000b86                  __funpack
+                  0x000adc          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
+                  0x000adc                  ___floatunsisf
+ .libm.floorf     0x000ae0         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
+                  0x000ae0                  _floorf
+ .libm.nesf2      0x000af0          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
+                  0x000af0                  ___nesf2
+ .libm.fpack      0x000af4         0x4c /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                  0x000af4                  __fpack
+ .libm.funpack    0x000b40         0x2a /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                  0x000b40                  __funpack
  .libm.funpack2
-                  0x000bb0         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
-                  0x000bb0                  __funpack2
+                  0x000b6a         0x10 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                  0x000b6a                  __funpack2
  .libm.fPropagateNaN
-                  0x000bc0         0x12 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
-                  0x000bc0                  __fPropagateNaN
+                  0x000b7a         0x12 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000b7a                  __fPropagateNaN
  .libm.fbobExit
-                  0x000bd2          0x8 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
-                  0x000bd2                  __fbopExit
+                  0x000b8c          0x8 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000b8c                  __fbopExit
  .libm.fbopReturnNaN
-                  0x000bda          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
-                  0x000bda                  __fbopReturnNaN
- .libm.log10f     0x000be0          0x8 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(log10f.epeo)
-                  0x000be0                  _log10f
- .libm.logf       0x000be8         0xae /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(logf.epeo)
-                  0x000be8                  _logf
- .libm.mulsf3     0x000c96         0x68 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
-                  0x000c96                  ___mulsf3
- .libm.sincosf    0x000cfe         0xd2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
-                  0x000cfe                  __sincosf
- .libm.sinf       0x000dd0          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
-                  0x000dd0                  _sinf
- .libm.frexpf     0x000dd4         0x1a /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(_frexpf.epeo)
-                  0x000dd4                  __frexpf
+                  0x000b94          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000b94                  __fbopReturnNaN
+ .libm.log10f     0x000b9a          0x8 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(log10f.epeo)
+                  0x000b9a                  _log10f
+ .libm.logf       0x000ba2         0xae /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(logf.epeo)
+                  0x000ba2                  _logf
+ .libm.mulsf3     0x000c50         0x68 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
+                  0x000c50                  ___mulsf3
+ .libm.sincosf    0x000cb8         0xd2 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
+                  0x000cb8                  __sincosf
+ .libm.sinf       0x000d8a          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
+                  0x000d8a                  _sinf
+ .libm.frexpf     0x000d8e         0x1a /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(_frexpf.epeo)
+                  0x000d8e                  __frexpf
  .libm.fcompare
-                  0x000dee         0x36 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
-                  0x000dee                  __fcompare
+                  0x000da8         0x36 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
+                  0x000da8                  __fcompare
  .libm.floatdisf
-                  0x000e24         0x20 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
-                  0x000e24                  ___floatdisf
+                  0x000dde         0x20 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                  0x000dde                  ___floatdisf
  .libm.floatundisf
-                  0x000e44         0x5e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
-                  0x000e44                  ___floatundisf
- .libm.fmodf      0x000ea2          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
-                  0x000ea2                  _fmodf
- .libm.fmodrem    0x000ea6         0x9e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
-                  0x000ea6                  __fmodrem
+                  0x000dfe         0x5e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                  0x000dfe                  ___floatundisf
+ .libm.fmodf      0x000e5c          0x4 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
+                  0x000e5c                  _fmodf
+ .libm.fmodrem    0x000e60         0x9e /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
+                  0x000e60                  __fmodrem
 
 usercode
  *(usercode)
@@ -919,46 +739,25 @@ __FUID3
 .comment
  *(.comment)
 
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-.debug_info       0x000000       0xa205
+.debug_info       0x000000       0xa222
  *(.debug_info)
- .debug_info      0x000000        0x484 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_info      0x000484        0x337 build/default/production/mcc_generated_files/pin_manager.o
- .debug_info      0x0007bb       0x2b2f build/default/production/mcc_generated_files/mcc.o
- .debug_info      0x0032ea        0x5e8 build/default/production/mcc_generated_files/traps.o
- .debug_info      0x0038d2       0x100d build/default/production/mcc_generated_files/adc1.o
- .debug_info      0x0048df       0x170f build/default/production/mcc_generated_files/dma.o
- .debug_info      0x005fee        0x678 build/default/production/mcc_generated_files/tmr3.o
- .debug_info      0x006666        0x9a2 build/default/production/mcc_generated_files/tmr1.o
- .debug_info      0x007008       0x2548 build/default/production/main.o
- .debug_info      0x009550        0x783 build/default/production/guitar_tuner.o
- .debug_info      0x009cd3        0x184 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
- .debug_info      0x009e57        0x171 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
- .debug_info      0x009fc8        0x23d /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
+ .debug_info      0x000000        0x29c build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_info      0x00029c        0x313 build/default/production/mcc_generated_files/pin_manager.o
+ .debug_info      0x0005af       0x2b0b build/default/production/mcc_generated_files/mcc.o
+ .debug_info      0x0030ba        0x5c4 build/default/production/mcc_generated_files/traps.o
+ .debug_info      0x00367e        0xfe9 build/default/production/mcc_generated_files/adc1.o
+ .debug_info      0x004667       0x16eb build/default/production/mcc_generated_files/dma.o
+ .debug_info      0x005d52        0x654 build/default/production/mcc_generated_files/tmr3.o
+ .debug_info      0x0063a6        0x668 build/default/production/mcc_generated_files/tmr1.o
+ .debug_info      0x006a0e       0x26ae build/default/production/main.o
+ .debug_info      0x0090bc        0x500 build/default/production/guitar_tuner.o
+ .debug_info      0x0095bc        0x713 build/default/production/lcd.o
+ .debug_info      0x009ccf        0x18f /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+ .debug_info      0x009e5e        0x17c /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
+ .debug_info      0x009fda        0x248 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0xcc3
-=======
-.debug_info       0x000000       0xa291
- *(.debug_info)
- .debug_info      0x000000        0x460 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_info      0x000460        0x313 build/default/production/mcc_generated_files/pin_manager.o
- .debug_info      0x000773       0x2b0b build/default/production/mcc_generated_files/mcc.o
- .debug_info      0x00327e        0x5c4 build/default/production/mcc_generated_files/traps.o
- .debug_info      0x003842        0xfe9 build/default/production/mcc_generated_files/adc1.o
- .debug_info      0x00482b       0x16eb build/default/production/mcc_generated_files/dma.o
- .debug_info      0x005f16        0x654 build/default/production/mcc_generated_files/tmr3.o
- .debug_info      0x00656a        0x7f0 build/default/production/mcc_generated_files/tmr1.o
- .debug_info      0x006d5a       0x2522 build/default/production/main.o
- .debug_info      0x00927c        0x4c1 build/default/production/guitar_tuner.o
- .debug_info      0x00973d        0x601 build/default/production/lcd.o
- .debug_info      0x009d3e        0x18f /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- .debug_info      0x009ecd        0x17c /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- .debug_info      0x00a049        0x248 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
- *(.gnu.linkonce.wi.*)
-
-.debug_abbrev     0x000000        0xd5c
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+.debug_abbrev     0x000000        0xd7e
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xa7 build/default/production/mcc_generated_files/interrupt_manager.o
  .debug_abbrev    0x0000a7         0x4c build/default/production/mcc_generated_files/pin_manager.o
@@ -967,55 +766,32 @@ __FUID3
  .debug_abbrev    0x0003c1         0xf0 build/default/production/mcc_generated_files/adc1.o
  .debug_abbrev    0x0004b1        0x126 build/default/production/mcc_generated_files/dma.o
  .debug_abbrev    0x0005d7        0x148 build/default/production/mcc_generated_files/tmr3.o
- .debug_abbrev    0x00071f        0x15b build/default/production/mcc_generated_files/tmr1.o
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
- .debug_abbrev    0x00087a        0x1bd build/default/production/main.o
- .debug_abbrev    0x000a37        0x11d build/default/production/guitar_tuner.o
- .debug_abbrev    0x000b54         0x61 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
- .debug_abbrev    0x000bb5         0x79 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
- .debug_abbrev    0x000c2e         0x95 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
+ .debug_abbrev    0x00071f        0x148 build/default/production/mcc_generated_files/tmr1.o
+ .debug_abbrev    0x000867        0x1bd build/default/production/main.o
+ .debug_abbrev    0x000a24         0xd4 build/default/production/guitar_tuner.o
+ .debug_abbrev    0x000af8        0x117 build/default/production/lcd.o
+ .debug_abbrev    0x000c0f         0x61 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+ .debug_abbrev    0x000c70         0x79 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
+ .debug_abbrev    0x000ce9         0x95 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
 
-.debug_line       0x000000        0xc75
-=======
- .debug_abbrev    0x00087a        0x1b0 build/default/production/main.o
- .debug_abbrev    0x000a2a         0xd4 build/default/production/guitar_tuner.o
- .debug_abbrev    0x000afe         0xef build/default/production/lcd.o
- .debug_abbrev    0x000bed         0x61 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- .debug_abbrev    0x000c4e         0x79 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- .debug_abbrev    0x000cc7         0x95 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
-
-.debug_line       0x000000        0xe77
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+.debug_line       0x000000        0xeb8
  *(.debug_line)
- .debug_line      0x000000         0xa5 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_line      0x0000a5         0xaf build/default/production/mcc_generated_files/pin_manager.o
- .debug_line      0x000154        0x15e build/default/production/mcc_generated_files/mcc.o
- .debug_line      0x0002b2        0x117 build/default/production/mcc_generated_files/traps.o
- .debug_line      0x0003c9         0xe5 build/default/production/mcc_generated_files/adc1.o
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
- .debug_line      0x0004ae        0x164 build/default/production/mcc_generated_files/dma.o
- .debug_line      0x000612        0x106 build/default/production/mcc_generated_files/tmr3.o
- .debug_line      0x000718        0x11f build/default/production/mcc_generated_files/tmr1.o
- .debug_line      0x000837        0x150 build/default/production/main.o
- .debug_line      0x000987        0x1a0 build/default/production/guitar_tuner.o
- .debug_line      0x000b27         0x7e /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
- .debug_line      0x000ba5         0x57 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
- .debug_line      0x000bfc         0x79 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
+ .debug_line      0x000000         0xa4 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x0000a4         0xaf build/default/production/mcc_generated_files/pin_manager.o
+ .debug_line      0x000153        0x15e build/default/production/mcc_generated_files/mcc.o
+ .debug_line      0x0002b1        0x117 build/default/production/mcc_generated_files/traps.o
+ .debug_line      0x0003c8         0xe5 build/default/production/mcc_generated_files/adc1.o
+ .debug_line      0x0004ad        0x155 build/default/production/mcc_generated_files/dma.o
+ .debug_line      0x000602        0x106 build/default/production/mcc_generated_files/tmr3.o
+ .debug_line      0x000708        0x106 build/default/production/mcc_generated_files/tmr1.o
+ .debug_line      0x00080e        0x150 build/default/production/main.o
+ .debug_line      0x00095e        0x16d build/default/production/guitar_tuner.o
+ .debug_line      0x000acb        0x128 build/default/production/lcd.o
+ .debug_line      0x000bf3        0x12f /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+ .debug_line      0x000d22         0x81 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
+ .debug_line      0x000da3        0x115 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
 
-.debug_frame      0x000000        0x7de
-=======
- .debug_line      0x0004ae        0x155 build/default/production/mcc_generated_files/dma.o
- .debug_line      0x000603        0x106 build/default/production/mcc_generated_files/tmr3.o
- .debug_line      0x000709        0x10c build/default/production/mcc_generated_files/tmr1.o
- .debug_line      0x000815        0x157 build/default/production/main.o
- .debug_line      0x00096c        0x13d build/default/production/guitar_tuner.o
- .debug_line      0x000aa9        0x109 build/default/production/lcd.o
- .debug_line      0x000bb2        0x12f /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- .debug_line      0x000ce1         0x81 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- .debug_line      0x000d62        0x115 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
-
-.debug_frame      0x000000        0x826
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+.debug_frame      0x000000        0x8fe
  *(.debug_frame)
  .debug_frame     0x000000         0x30 build/default/production/mcc_generated_files/interrupt_manager.o
  .debug_frame     0x000030         0x30 build/default/production/mcc_generated_files/pin_manager.o
@@ -1024,40 +800,26 @@ __FUID3
  .debug_frame     0x0002c8         0x4c build/default/production/mcc_generated_files/adc1.o
  .debug_frame     0x000314         0x54 build/default/production/mcc_generated_files/dma.o
  .debug_frame     0x000368        0x148 build/default/production/mcc_generated_files/tmr3.o
- .debug_frame     0x0004b0        0x188 build/default/production/mcc_generated_files/tmr1.o
- .debug_frame     0x000638         0x36 build/default/production/main.o
- .debug_frame     0x00066e         0x90 build/default/production/guitar_tuner.o
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
- .debug_frame     0x0006fe         0x50 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
- .debug_frame     0x00074e         0x40 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
- .debug_frame     0x00078e         0x50 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
+ .debug_frame     0x0004b0        0x148 build/default/production/mcc_generated_files/tmr1.o
+ .debug_frame     0x0005f8         0x36 build/default/production/main.o
+ .debug_frame     0x00062e         0xac build/default/production/guitar_tuner.o
+ .debug_frame     0x0006da        0x1b8 build/default/production/lcd.o
+ .debug_frame     0x000892         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
+ .debug_frame     0x0008b6         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
+ .debug_frame     0x0008da         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
 
-.debug_str        0x000000        0x828
-=======
- .debug_frame     0x0006fe         0xbc build/default/production/lcd.o
- .debug_frame     0x0007ba         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- .debug_frame     0x0007de         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- .debug_frame     0x000802         0x24 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
-
-.debug_str        0x000000        0x81f
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+.debug_str        0x000000        0x7f8
  *(.debug_str)
- .debug_str       0x000000         0x12 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_str       0x000012        0x244 build/default/production/mcc_generated_files/mcc.o
- .debug_str       0x000256         0x24 build/default/production/mcc_generated_files/traps.o
- .debug_str       0x00027a         0x87 build/default/production/mcc_generated_files/adc1.o
- .debug_str       0x000301        0x1de build/default/production/mcc_generated_files/dma.o
- .debug_str       0x0004df         0x13 build/default/production/mcc_generated_files/tmr3.o
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
- .debug_str       0x0004f2         0x25 build/default/production/mcc_generated_files/tmr1.o
- .debug_str       0x000517        0x2f2 build/default/production/main.o
- .debug_str       0x000809         0x1f build/default/production/guitar_tuner.o
-=======
- .debug_str       0x0004f2         0x1c build/default/production/mcc_generated_files/tmr1.o
- .debug_str       0x00050e        0x2f2 build/default/production/main.o
- .debug_str       0x000800          0xd build/default/production/guitar_tuner.o
- .debug_str       0x00080d         0x12 build/default/production/lcd.o
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+ .debug_str       0x000000          0x9 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_str       0x000009        0x244 build/default/production/mcc_generated_files/mcc.o
+ .debug_str       0x00024d         0x24 build/default/production/mcc_generated_files/traps.o
+ .debug_str       0x000271         0x87 build/default/production/mcc_generated_files/adc1.o
+ .debug_str       0x0002f8        0x1de build/default/production/mcc_generated_files/dma.o
+ .debug_str       0x0004d6         0x13 build/default/production/mcc_generated_files/tmr3.o
+ .debug_str       0x0004e9         0x13 build/default/production/mcc_generated_files/tmr1.o
+ .debug_str       0x0004fc        0x2dd build/default/production/main.o
+ .debug_str       0x0007d9          0xd build/default/production/guitar_tuner.o
+ .debug_str       0x0007e6         0x12 build/default/production/lcd.o
 
 .debug_loc
  *(.debug_loc)
@@ -1066,11 +828,7 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-                  0x000000        0x759
-=======
-                  0x000000        0x7d4
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x000000        0x899
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x2b build/default/production/mcc_generated_files/interrupt_manager.o
@@ -1087,28 +845,19 @@ __FUID3
  .debug_pubnames
                   0x000345        0x11a build/default/production/mcc_generated_files/tmr3.o
  .debug_pubnames
-                  0x00045f        0x11f build/default/production/mcc_generated_files/tmr1.o
+                  0x00045f        0x11a build/default/production/mcc_generated_files/tmr1.o
  .debug_pubnames
-                  0x00057e        0x107 build/default/production/main.o
+                  0x000579        0x107 build/default/production/main.o
  .debug_pubnames
-                  0x000685         0x6b build/default/production/guitar_tuner.o
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
+                  0x000680         0x83 build/default/production/guitar_tuner.o
  .debug_pubnames
-                  0x0006f0         0x22 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
+                  0x000703        0x12d build/default/production/lcd.o
  .debug_pubnames
-                  0x000712         0x22 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
+                  0x000830         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
  .debug_pubnames
-                  0x000734         0x25 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
-=======
+                  0x000852         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
  .debug_pubnames
-                  0x0006f0         0x7b build/default/production/lcd.o
- .debug_pubnames
-                  0x00076b         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- .debug_pubnames
-                  0x00078d         0x22 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- .debug_pubnames
-                  0x0007af         0x25 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x000874         0x25 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
 
 .debug_ranges
  *(.debug_ranges)
@@ -2269,257 +2018,148 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-                  0x000170        0xd4f
-=======
-                  0x000188        0xd5a
+                  0x000188        0xd3d
  .debug_pubtypes
-                  0x000188         0x4c build/default/production/mcc_generated_files/interrupt_manager.o
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x000188         0x2f build/default/production/mcc_generated_files/interrupt_manager.o
  .debug_pubtypes
-                  0x0001d4         0x12 build/default/production/mcc_generated_files/pin_manager.o
+                  0x0001b7         0x12 build/default/production/mcc_generated_files/pin_manager.o
  .debug_pubtypes
-                  0x0001e6        0x367 build/default/production/mcc_generated_files/mcc.o
+                  0x0001c9        0x367 build/default/production/mcc_generated_files/mcc.o
  .debug_pubtypes
-                  0x00054d         0x94 build/default/production/mcc_generated_files/traps.o
+                  0x000530         0x94 build/default/production/mcc_generated_files/traps.o
  .debug_pubtypes
-                  0x0005e1        0x137 build/default/production/mcc_generated_files/adc1.o
+                  0x0005c4        0x137 build/default/production/mcc_generated_files/adc1.o
  .debug_pubtypes
-                  0x000718        0x204 build/default/production/mcc_generated_files/dma.o
+                  0x0006fb        0x204 build/default/production/mcc_generated_files/dma.o
  .debug_pubtypes
-                  0x00091c         0x87 build/default/production/mcc_generated_files/tmr3.o
+                  0x0008ff         0x87 build/default/production/mcc_generated_files/tmr3.o
  .debug_pubtypes
-                  0x0009a3         0xa4 build/default/production/mcc_generated_files/tmr1.o
+                  0x000986         0x87 build/default/production/mcc_generated_files/tmr1.o
  .debug_pubtypes
-                  0x000a47        0x331 build/default/production/main.o
+                  0x000a0d        0x34e build/default/production/main.o
  .debug_pubtypes
-                  0x000d78         0x94 build/default/production/guitar_tuner.o
+                  0x000d5b         0x94 build/default/production/guitar_tuner.o
  .debug_pubtypes
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-                  0x000d7d         0xce build/default/production/guitar_tuner.o
+                  0x000def         0x62 build/default/production/lcd.o
  .debug_pubtypes
-                  0x000e4b         0x21 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
+                  0x000e51         0x21 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
  .debug_pubtypes
-                  0x000e6c         0x21 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
+                  0x000e72         0x21 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
  .debug_pubtypes
-                  0x000e8d         0x32 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
+                  0x000e93         0x32 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
 
 __c30_signature
-                  0x000ebf        0x108
+                  0x000ec5        0x14a
  __c30_signature
-                  0x000ebf          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x000ec5          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000ec5          0x6 build/default/production/mcc_generated_files/pin_manager.o
+                  0x000ecb          0x6 build/default/production/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000ecb          0x6 build/default/production/mcc_generated_files/mcc.o
+                  0x000ed1          0x6 build/default/production/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000ed1          0x6 build/default/production/mcc_generated_files/traps.o
+                  0x000ed7          0x6 build/default/production/mcc_generated_files/traps.o
  __c30_signature
-                  0x000ed7          0x6 build/default/production/mcc_generated_files/adc1.o
+                  0x000edd          0x6 build/default/production/mcc_generated_files/adc1.o
  __c30_signature
-                  0x000edd          0x6 build/default/production/mcc_generated_files/dma.o
+                  0x000ee3          0x6 build/default/production/mcc_generated_files/dma.o
  __c30_signature
-                  0x000ee3          0x6 build/default/production/mcc_generated_files/tmr3.o
+                  0x000ee9          0x6 build/default/production/mcc_generated_files/tmr3.o
  __c30_signature
-                  0x000ee9          0x6 build/default/production/mcc_generated_files/tmr1.o
+                  0x000eef          0x6 build/default/production/mcc_generated_files/tmr1.o
  __c30_signature
-                  0x000eef          0x6 build/default/production/main.o
+                  0x000ef5          0x6 build/default/production/main.o
  __c30_signature
-                  0x000ef5          0x6 build/default/production/guitar_tuner.o
+                  0x000efb          0x6 build/default/production/guitar_tuner.o
  __c30_signature
-                  0x000efb          0x6 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(flt2frct.depeo)
+                  0x000f01          0x6 build/default/production/lcd.o
  __c30_signature
-                  0x000f01          0x6 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inithann.depeo)
+                  0x000f07          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_bitrev.obj)
  __c30_signature
-                  0x000f07          0x6 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(inittwid.depeo)
+                  0x000f0d          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_cplxsqrmag.obj)
  __c30_signature
-                  0x000f0d          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x000f13          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_dowindow.obj)
  __c30_signature
-                  0x000f13          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x000f19          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj)
  __c30_signature
-                  0x000f19          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
+                  0x000f1f          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
  __c30_signature
-                  0x000f1f          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
+                  0x000f25          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
  __c30_signature
-                  0x000f25          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(cosf.epeo)
+                  0x000f2b          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
  __c30_signature
-                  0x000f2b          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                  0x000f31          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
  __c30_signature
-                  0x000f31          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fchop.epeo)
+                  0x000f37          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
  __c30_signature
-                  0x000f37          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
+                  0x000f3d          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmul.obj)
  __c30_signature
-                  0x000f3d          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
+                  0x000f43          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vzpad.obj)
  __c30_signature
-                  0x000f43          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
+                  0x000f49          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vcopy.obj)
  __c30_signature
-                  0x000f49          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
+                  0x000f4f          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x000f4f          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                  0x000f55          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x000f55          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
+                  0x000f5b          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(delay32ep.Leo)
  __c30_signature
-                  0x000f5b          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(floorf.epeo)
+                  0x000f61          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
  __c30_signature
-                  0x000f61          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fne.epeo)
+                  0x000f67          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
  __c30_signature
-                  0x000f67          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                  0x000f6d          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
  __c30_signature
-                  0x000f6d          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                  0x000f73          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
  __c30_signature
-                  0x000f73          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                  0x000f79          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
  __c30_signature
-                  0x000f79          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x000f7f          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
  __c30_signature
-                  0x000f7f          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(log10f.epeo)
+                  0x000f85          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
  __c30_signature
-                  0x000f85          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(logf.epeo)
+                  0x000f8b          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
  __c30_signature
-                  0x000f8b          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
+                  0x000f91          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
  __c30_signature
-                  0x000f91          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
+                  0x000f97          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
  __c30_signature
-                  0x000f97          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(sinf.epeo)
+                  0x000f9d          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
  __c30_signature
-                  0x000f9d          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(_frexpf.epeo)
+                  0x000fa3          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
  __c30_signature
-                  0x000fa3          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(errno.epeo)
+                  0x000fa9          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
  __c30_signature
-                  0x000fa9          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
+                  0x000faf          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
  __c30_signature
-                  0x000faf          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                  0x000fb5          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
  __c30_signature
-                  0x000fb5          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                  0x000fbb          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
  __c30_signature
-                  0x000fbb          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
+                  0x000fc1          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
  __c30_signature
-                  0x000fc1          0x6 /opt/microchip/xc16/v1.32/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
-=======
-                  0x000e0c         0x62 build/default/production/lcd.o
- .debug_pubtypes
-                  0x000e6e         0x21 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- .debug_pubtypes
-                  0x000e8f         0x21 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- .debug_pubtypes
-                  0x000eb0         0x32 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
-
-__c30_signature
-                  0x000ee2        0x156
+                  0x000fc7          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(log10f.epeo)
  __c30_signature
-                  0x000ee2          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x000fcd          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(logf.epeo)
  __c30_signature
-                  0x000ee8          0x6 build/default/production/mcc_generated_files/pin_manager.o
+                  0x000fd3          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
  __c30_signature
-                  0x000eee          0x6 build/default/production/mcc_generated_files/mcc.o
+                  0x000fd9          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
  __c30_signature
-                  0x000ef4          0x6 build/default/production/mcc_generated_files/traps.o
+                  0x000fdf          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
  __c30_signature
-                  0x000efa          0x6 build/default/production/mcc_generated_files/adc1.o
+                  0x000fe5          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(_frexpf.epeo)
  __c30_signature
-                  0x000f00          0x6 build/default/production/mcc_generated_files/dma.o
+                  0x000feb          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(errno.epeo)
  __c30_signature
-                  0x000f06          0x6 build/default/production/mcc_generated_files/tmr3.o
+                  0x000ff1          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
  __c30_signature
-                  0x000f0c          0x6 build/default/production/mcc_generated_files/tmr1.o
+                  0x000ff7          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
  __c30_signature
-                  0x000f12          0x6 build/default/production/main.o
+                  0x000ffd          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
  __c30_signature
-                  0x000f18          0x6 build/default/production/guitar_tuner.o
+                  0x001003          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
  __c30_signature
-                  0x000f1e          0x6 build/default/production/lcd.o
- __c30_signature
-                  0x000f24          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_bitrev.obj)
- __c30_signature
-                  0x000f2a          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_cplxsqrmag.obj)
- __c30_signature
-                  0x000f30          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_dowindow.obj)
- __c30_signature
-                  0x000f36          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_fft.obj)
- __c30_signature
-                  0x000f3c          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_flt2frct.o)
- __c30_signature
-                  0x000f42          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inithann.o)
- __c30_signature
-                  0x000f48          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_inittwid.o)
- __c30_signature
-                  0x000f4e          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
- __c30_signature
-                  0x000f54          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vdot.obj)
- __c30_signature
-                  0x000f5a          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmax.obj)
- __c30_signature
-                  0x000f60          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vmul.obj)
- __c30_signature
-                  0x000f66          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vsub.obj)
- __c30_signature
-                  0x000f6c          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vzpad.obj)
- __c30_signature
-                  0x000f72          0x6 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_vcopy.obj)
- __c30_signature
-                  0x000f78          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
- __c30_signature
-                  0x000f7e          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
- __c30_signature
-                  0x000f84          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(delay32ep.Leo)
- __c30_signature
-                  0x000f8a          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(addsf3.epeo)
- __c30_signature
-                  0x000f90          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(ceilf.epeo)
- __c30_signature
-                  0x000f96          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(cosf.epeo)
- __c30_signature
-                  0x000f9c          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
- __c30_signature
-                  0x000fa2          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fchop.epeo)
- __c30_signature
-                  0x000fa8          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(feqltle.epeo)
- __c30_signature
-                  0x000fae          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fgtge.epeo)
- __c30_signature
-                  0x000fb4          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
- __c30_signature
-                  0x000fba          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
- __c30_signature
-                  0x000fc0          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
- __c30_signature
-                  0x000fc6          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
- __c30_signature
-                  0x000fcc          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floorf.epeo)
- __c30_signature
-                  0x000fd2          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fne.epeo)
- __c30_signature
-                  0x000fd8          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fpack.epeo)
- __c30_signature
-                  0x000fde          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack.epeo)
- __c30_signature
-                  0x000fe4          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
- __c30_signature
-                  0x000fea          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(futil.epeo)
- __c30_signature
-                  0x000ff0          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(log10f.epeo)
- __c30_signature
-                  0x000ff6          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(logf.epeo)
- __c30_signature
-                  0x000ffc          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
- __c30_signature
-                  0x001002          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sincosf.epeo)
- __c30_signature
-                  0x001008          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(sinf.epeo)
- __c30_signature
-                  0x00100e          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(_frexpf.epeo)
- __c30_signature
-                  0x001014          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(errno.epeo)
- __c30_signature
-                  0x00101a          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fcompare.epeo)
- __c30_signature
-                  0x001020          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
- __c30_signature
-                  0x001026          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
- __c30_signature
-                  0x00102c          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodf.epeo)
- __c30_signature
-                  0x001032          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+                  0x001009          0x6 /opt/microchip/xc16/v1.31/bin/bin/../../lib/libm-elf.a(fmodrem.epeo)
 
 .nbss               0x1000          0xe
  .nbss              0x1000          0xe build/default/production/main.o
@@ -2546,15 +2186,9 @@ __c30_signature
  .xbss              0x1800        0x800 build/default/production/main.o
                     0x1800                  _twiddle_factors
 
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-_0xf6c1fb805a0861be
+_0xf6c0db805a0f4647
                     0x3000       0x1000
- _0xf6c1fb805a0861be
-=======
-_0xf6bb7b805a0a3fa1
-                    0x3000       0x1000
- _0xf6bb7b805a0a3fa1
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+ _0xf6c0db805a0f4647
                     0x3000       0x1000 build/default/production/main.o
                     0x3000                  _signal_in_complex
 
@@ -2577,19 +2211,11 @@ _0xf6bb7b805a0a3fa1
 .bss                0x10a8         0x20
  .bss               0x10a8         0x20 build/default/production/mcc_generated_files/traps.o
 
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-_0xf6b9c05c5a0861be
-                    0x10c6          0x4
- _0xf6b9c05c5a0861be
-                    0x10c6          0x4 build/default/production/main.o
-                    0x10c6                  _note_in
-=======
-_0xf6b3905c5a0a3fa1
+_0xf6b9005c5a0f4647
                     0x10c8          0x4
- _0xf6b3905c5a0a3fa1
+ _0xf6b9005c5a0f4647
                     0x10c8          0x4 build/default/production/main.o
                     0x10c8                  _note_in
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
 
 .bss                0x10cc          0x4
  .bss               0x10cc          0x2 build/default/production/mcc_generated_files/tmr3.o
@@ -2657,155 +2283,94 @@ _0xf6b3905c5a0a3fa1
  .ivt._DMA0Interrupt
                   0x00001c          0x2 build/default/production/mcc_generated_files/dma.o
 
-.ivt._T1Interrupt
-                  0x00001a          0x2
- .ivt._T1Interrupt
-                  0x00001a          0x2 build/default/production/mcc_generated_files/tmr1.o
+.const              0x8efe         0x2c load address 0x000efe  
+ .const             0x8efe         0x1e build/default/production/guitar_tuner.o
+ .const             0x8f1c          0xe build/default/production/main.o
 
-<<<<<<< HEAD:dist/default/production/GuitarTuner.X.production.map
-.text             0x000f7a        0x7d4
- .text            0x000f7a        0x49e build/default/production/guitar_tuner.o
-                  0x000f7a                  _GrandkeFreqInterpolation
-                  0x001030                  _FillVector
-                  0x001058                  _NoteDetect
-                  0x0013b2                  _ShowNote
- .text            0x001418        0x1a8 build/default/production/mcc_generated_files/mcc.o
-                  0x00143e                  _SYSTEM_Initialize
-                  0x00145a                  _OSCILLATOR_Initialize
-                  0x0014ac                  _SYSTEM_GetResetCause
-                  0x0014b4                  _SYSTEM_ResetCauseHandler
-                  0x001506                  _SYSTEM_ResetCauseFromTrap
-                  0x00151e                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x00153a                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x001556                  _SYSTEM_ResetCauseFromExternal
-                  0x001572                  _SYSTEM_ResetCauseFromSoftware
-                  0x00158e                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0015a8                  _SYSTEM_ResetCauseClear
-                  0x0015b8                  _SYSTEM_ResetCauseClearAll
- .text            0x0015c0        0x18e build/default/production/main.o
-                  0x0015c0                  _main
+.text             0x000f2a        0xafe
+ .text            0x000f2a        0x5b4 build/default/production/guitar_tuner.o
+                  0x000f2a                  _GrandkeFreqInterpolation
+                  0x000fe0                  _FillVector
+                  0x001008                  _NoteDetect
+                  0x001348                  _PrintTuningDistance
+                  0x001396                  _ShowNote
+ .text            0x0014de        0x22c build/default/production/lcd.o
+                  0x0014de                  _LcdSendNibble
+                  0x00155c                  _LcdSendByte
+                  0x001592                  _LcdInitialize
+                  0x0015f8                  _LcdPlaceText
+                  0x001626                  _LcdPrintChar
+                  0x001636                  _LcdPrintString
+                  0x001654                  _LcdClear
+                  0x001666                  _LcdTurnOn
+                  0x00167a                  _LcdTurnOff
+                  0x00168e                  _LcdTurnOnCursor
+                  0x0016a2                  _LcdTurnOffCursor
+                  0x0016b6                  _LcdTurnOnCursorBlink
+                  0x0016ca                  _LcdTurnOffCursorBlink
+                  0x0016de                  _LcdTextRight2Left
+                  0x0016f4                  _LcdTextLeft2Right
+ .text            0x00170a        0x1a8 build/default/production/mcc_generated_files/mcc.o
+                  0x001730                  _SYSTEM_Initialize
+                  0x00174c                  _OSCILLATOR_Initialize
+                  0x00179e                  _SYSTEM_GetResetCause
+                  0x0017a6                  _SYSTEM_ResetCauseHandler
+                  0x0017f8                  _SYSTEM_ResetCauseFromTrap
+                  0x001810                  _SYSTEM_ResetCauseFromIllegalOpcode
+                  0x00182c                  _SYSTEM_ResetCauseFromConfigurationMismatch
+                  0x001848                  _SYSTEM_ResetCauseFromExternal
+                  0x001864                  _SYSTEM_ResetCauseFromSoftware
+                  0x001880                  _SYSTEM_ResetCauseFromWatchdogTimer
+                  0x00189a                  _SYSTEM_ResetCauseClear
+                  0x0018aa                  _SYSTEM_ResetCauseClearAll
+ .text            0x0018b2        0x176 build/default/production/main.o
+                  0x0018b2                  _main
 
-.dinit            0x00174e         0xc0
- .dinit           0x00174e         0xc0 data_init
+.dinit            0x001a28         0xc6
+ .dinit           0x001a28         0xc6 data_init
 
-.text             0x00180e        0x22e
- .text            0x00180e         0xb4 build/default/production/mcc_generated_files/tmr1.o
-                  0x00180e                  _TMR1_Initialize
-                  0x001828                  _TMR1_Period16BitSet
-                  0x00183a                  _TMR1_Period16BitGet
-                  0x001842                  _TMR1_Counter16BitSet
-                  0x001854                  _TMR1_Counter16BitGet
-                  0x00185c                  _TMR1_CallBack
-                  0x001878                  _TMR1_Start
-                  0x001888                  _TMR1_Stop
-                  0x001892                  _TMR1_GetElapsedThenClear
-                  0x0018aa                  _TMR1_SoftwareCounterGet
-                  0x0018b6                  _TMR1_SoftwareCounterClear
- .text            0x0018c2         0xb2 build/default/production/mcc_generated_files/tmr3.o
-                  0x0018c2                  _TMR3_Initialize
-                  0x0018d8                  _TMR3_Tasks_16BitOperation
-                  0x0018fa                  _TMR3_Period16BitSet
-                  0x00190c                  _TMR3_Period16BitGet
-                  0x001914                  _TMR3_Counter16BitSet
-                  0x001926                  _TMR3_Counter16BitGet
-                  0x00192e                  _TMR3_Start
-                  0x00193c                  _TMR3_Stop
-                  0x001944                  _TMR3_GetElapsedThenClear
-                  0x00195c                  _TMR3_SoftwareCounterGet
-                  0x001968                  _TMR3_SoftwareCounterClear
- .text            0x001974         0x36 build/default/production/mcc_generated_files/pin_manager.o
-                  0x001974                  _PIN_MANAGER_Initialize
- .text            0x0019aa         0x36 build/default/production/mcc_generated_files/dma.o
-                  0x0019aa                  _DMA_Initialize
- .text            0x0019e0         0x28 build/default/production/mcc_generated_files/adc1.o
-                  0x0019e0                  _ADC1_Initialize
-                  0x001a00                  _ADC1_Tasks
- .text            0x001a08         0x1a build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x001a08                  _INTERRUPT_Initialize
- .text            0x001a22         0x16 build/default/production/mcc_generated_files/traps.o
-                  0x001a22                  _TRAPS_halt_on_error
- .text            0x001a38          0x4 /opt/microchip/xc16/v1.32/lib/libdsp-elf.a(stackguard.depeo)
-                  0x001a38                  _SetStackGuard
-=======
-.const              0x8f44          0xa load address 0x000f44  
- .const             0x8f44          0xa build/default/production/main.o
+.text             0x001aee        0x20c
+ .text            0x001aee         0xb2 build/default/production/mcc_generated_files/tmr3.o
+                  0x001aee                  _TMR3_Initialize
+                  0x001b04                  _TMR3_Tasks_16BitOperation
+                  0x001b26                  _TMR3_Period16BitSet
+                  0x001b38                  _TMR3_Period16BitGet
+                  0x001b40                  _TMR3_Counter16BitSet
+                  0x001b52                  _TMR3_Counter16BitGet
+                  0x001b5a                  _TMR3_Start
+                  0x001b68                  _TMR3_Stop
+                  0x001b70                  _TMR3_GetElapsedThenClear
+                  0x001b88                  _TMR3_SoftwareCounterGet
+                  0x001b94                  _TMR3_SoftwareCounterClear
+ .text            0x001ba0         0xb0 build/default/production/mcc_generated_files/tmr1.o
+                  0x001ba0                  _TMR1_Initialize
+                  0x001bb6                  _TMR1_Tasks_16BitOperation
+                  0x001bd6                  _TMR1_Period16BitSet
+                  0x001be8                  _TMR1_Period16BitGet
+                  0x001bf0                  _TMR1_Counter16BitSet
+                  0x001c02                  _TMR1_Counter16BitGet
+                  0x001c0a                  _TMR1_Start
+                  0x001c18                  _TMR1_Stop
+                  0x001c20                  _TMR1_GetElapsedThenClear
+                  0x001c38                  _TMR1_SoftwareCounterGet
+                  0x001c44                  _TMR1_SoftwareCounterClear
+ .text            0x001c50         0x4c build/default/production/mcc_generated_files/dma.o
+                  0x001c50                  _DMA_Initialize
+                  0x001c86                  __DMA0Interrupt
+ .text            0x001c9c         0x34 build/default/production/mcc_generated_files/pin_manager.o
+                  0x001c9c                  _PIN_MANAGER_Initialize
+ .text            0x001cd0         0x2a build/default/production/mcc_generated_files/adc1.o
+                  0x001cd0                  _ADC1_Initialize
+                  0x001cf2                  _ADC1_Tasks
 
-.text             0x000f4e        0x9f6
- .text            0x000f4e        0x42e build/default/production/guitar_tuner.o
-                  0x000f4e                  _GrandkeFreqInterpolation
-                  0x001004                  _FillVector
-                  0x00102c                  _NoteDetect
-                  0x001370                  _ShowNote
- .text            0x00137c        0x1c2 build/default/production/main.o
-                  0x00137c                  _main
- .text            0x00153e        0x1a8 build/default/production/mcc_generated_files/mcc.o
-                  0x001564                  _SYSTEM_Initialize
-                  0x001580                  _OSCILLATOR_Initialize
-                  0x0015d2                  _SYSTEM_GetResetCause
-                  0x0015da                  _SYSTEM_ResetCauseHandler
-                  0x00162c                  _SYSTEM_ResetCauseFromTrap
-                  0x001644                  _SYSTEM_ResetCauseFromIllegalOpcode
-                  0x001660                  _SYSTEM_ResetCauseFromConfigurationMismatch
-                  0x00167c                  _SYSTEM_ResetCauseFromExternal
-                  0x001698                  _SYSTEM_ResetCauseFromSoftware
-                  0x0016b4                  _SYSTEM_ResetCauseFromWatchdogTimer
-                  0x0016ce                  _SYSTEM_ResetCauseClear
-                  0x0016de                  _SYSTEM_ResetCauseClearAll
- .text            0x0016e6        0x192 build/default/production/lcd.o
-                  0x0016e6                  _LcdSendNibble
-                  0x001764                  _LcdSendByte
-                  0x00179a                  _LcdInitialize
-                  0x0017f8                  _LcdPlaceText
-                  0x001826                  _LcdWriteChar
-                  0x00185a                  _LcdWriteString
- .text            0x001878         0xcc build/default/production/mcc_generated_files/tmr1.o
-                  0x001878                  _TMR1_Initialize
-                  0x001892                  __T1Interrupt
-                  0x0018c0                  _TMR1_Period16BitSet
-                  0x0018d2                  _TMR1_Period16BitGet
-                  0x0018da                  _TMR1_Counter16BitSet
-                  0x0018ec                  _TMR1_Counter16BitGet
-                  0x0018f4                  _TMR1_CallBack
-                  0x0018fa                  _TMR1_Start
-                  0x00190a                  _TMR1_Stop
-                  0x001914                  _TMR1_GetElapsedThenClear
-                  0x00192c                  _TMR1_SoftwareCounterGet
-                  0x001938                  _TMR1_SoftwareCounterClear
+.init.delay32     0x001cfa         0x1c
+ .init.delay32    0x001cfa         0x1c /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(delay32ep.Leo)
+                  0x001cfa                  ___delay32
 
-.dinit            0x001944         0xc6
- .dinit           0x001944         0xc6 data_init
-
-.text             0x001a0a        0x15a
- .text            0x001a0a         0xb2 build/default/production/mcc_generated_files/tmr3.o
-                  0x001a0a                  _TMR3_Initialize
-                  0x001a20                  _TMR3_Tasks_16BitOperation
-                  0x001a42                  _TMR3_Period16BitSet
-                  0x001a54                  _TMR3_Period16BitGet
-                  0x001a5c                  _TMR3_Counter16BitSet
-                  0x001a6e                  _TMR3_Counter16BitGet
-                  0x001a76                  _TMR3_Start
-                  0x001a84                  _TMR3_Stop
-                  0x001a8c                  _TMR3_GetElapsedThenClear
-                  0x001aa4                  _TMR3_SoftwareCounterGet
-                  0x001ab0                  _TMR3_SoftwareCounterClear
- .text            0x001abc         0x4c build/default/production/mcc_generated_files/dma.o
-                  0x001abc                  _DMA_Initialize
-                  0x001af2                  __DMA0Interrupt
- .text            0x001b08         0x34 build/default/production/mcc_generated_files/pin_manager.o
-                  0x001b08                  _PIN_MANAGER_Initialize
- .text            0x001b3c         0x28 build/default/production/mcc_generated_files/adc1.o
-                  0x001b3c                  _ADC1_Initialize
-                  0x001b5c                  _ADC1_Tasks
-
-.init.delay32     0x001b64         0x1c
- .init.delay32    0x001b64         0x1c /opt/microchip/xc16/v1.31/bin/bin/../../lib/liblega-pic30-elf.a(delay32ep.Leo)
-                  0x001b64                  ___delay32
-
-.text             0x001b80         0x34
- .text            0x001b80         0x1a build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x001b80                  _INTERRUPT_Initialize
- .text            0x001b9a         0x16 build/default/production/mcc_generated_files/traps.o
-                  0x001b9a                  _TRAPS_halt_on_error
- .text            0x001bb0          0x4 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
-                  0x001bb0                  _SetStackGuard
->>>>>>> 8b4e1691fafdbfbe17c7852018703359c1934171:dist/default/production/GuitarTuner.production.map
+.text             0x001d16         0x2a
+ .text            0x001d16         0x16 build/default/production/mcc_generated_files/traps.o
+                  0x001d16                  _TRAPS_halt_on_error
+ .text            0x001d2c         0x10 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x001d2c                  _INTERRUPT_Initialize
+ .text            0x001d3c          0x4 /opt/microchip/xc16/v1.31/lib/libdsp-elf.a(ep_stackguard.obj)
+                  0x001d3c                  _SetStackGuard
