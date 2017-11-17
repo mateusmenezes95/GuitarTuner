@@ -56,7 +56,8 @@ void LcdInitialize(char mode1, char mode2)
     mode_lcd = LCD_DISPLAY_CONTROL | mode2;
     
     LcdSendByte(COMMAND, LCD_CLEAR_DISPLAY);
-    LcdSendByte(COMMAND, LCD_ENTRY_LEFT | LCD_ENTRY_SHIFT_DECREMENT | LCD_ENTRY_MODE_SET);
+    mode_lcd = LCD_ENTRY_LEFT | LCD_ENTRY_SHIFT_DECREMENT;
+    LcdSendByte(COMMAND, mode_lcd | LCD_ENTRY_MODE_SET);
 }
 
 void LcdPlaceText(uint8_t x, uint8_t y)
@@ -126,4 +127,16 @@ void LcdTurnOffCursorBlink()
 {
     mode_lcd &= ~LCD_CURSOR_BLINK;
     LcdSendByte(COMMAND, mode_lcd);    
+}
+
+void LcdTextRight2Left()
+{
+    mode_lcd &= ~LCD_ENTRY_LEFT;
+    LcdSendByte(COMMAND, LCD_ENTRY_MODE_SET | mode_lcd);
+}
+
+void LcdTextLeft2Right()
+{
+    mode_lcd |= LCD_ENTRY_LEFT;
+    LcdSendByte(COMMAND, LCD_ENTRY_MODE_SET | mode_lcd);
 }

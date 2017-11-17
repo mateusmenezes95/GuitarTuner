@@ -339,5 +339,9 @@ void LcdTurnOnCursorBlink(void);
 */
 void LcdTurnOffCursorBlink(void);
 
+void LcdTextRight2Left();
+
+void LcdTextLeft2Right();
+
 #endif	/* LCD_H */
 
