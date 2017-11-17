@@ -80,9 +80,9 @@ static ADC_OBJECT adc1_obj;
     
 void ADC1_Initialize (void)
 {
-    // ASAM enabled; ADDMABM enabled; ADSIDL disabled; DONE disabled; SIMSAM Sequential; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC TMR3; AD12B 12-bit; ADON enabled; SSRCG disabled; 
+    // ASAM enabled; ADDMABM enabled; ADSIDL disabled; DONE disabled; SIMSAM Sequential; FORM Fractional result, signed, left-justified; SAMP disabled; SSRC TMR3; AD12B 12-bit; ADON enabled; SSRCG disabled; 
 
-   AD1CON1 = 0x9444;
+   AD1CON1 = 0x9744;
 
     // CSCNA disabled; VCFG0 AVDD; VCFG1 AVSS; ALTS disabled; BUFM disabled; SMPI 1; CHPS 1 Channel; 
 
@@ -92,9 +92,9 @@ void ADC1_Initialize (void)
 
    AD1CON3 = 0xD;
 
-    // CH0SA AN0; CH0SB AN0; CH0NB AVSS; CH0NA AVSS; 
+    // CH0SA AN1; CH0SB AN0; CH0NB AVSS; CH0NA AVSS; 
 
-   AD1CHS0 = 0x0;
+   AD1CHS0 = 0x1;
 
     // CSS26 disabled; CSS25 disabled; CSS24 disabled; CSS31 disabled; CSS30 disabled; 
 
