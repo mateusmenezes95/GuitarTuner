@@ -18,7 +18,11 @@
 #define NUM_ZEROS 512
 #define NUM_NOTES 36
 #define LOG2_NUM_SAMP 10
-#define SAMPLING_RATE 4000
+#define SAMPLING_RATE 2000
+
+#define BLACK_SQUARE 255
+#define FIRST_LINE 0
+#define SECOND_LINE 1
 
 enum sampleStatus{NO, YES};
 enum tuningDistance{BELOW, ABOVE};
@@ -92,6 +96,8 @@ void FillVector(uint16_t vectorSize, fractional *vector2Fill, fractional data);
   
 */
 void NoteDetect(float freq_value, noteFeatures *note);
+
+void PrintTuningDistance(noteFeatures *note);
 
 #endif	/* GUITAR_TUNER_H */
 

@@ -6,6 +6,7 @@
  */
 
 #include "guitar_tuner.h"
+#include "lcd.h"
 
 float guitar_notes[NUM_NOTES] = 
 {
@@ -149,45 +150,72 @@ void NoteDetect(float freq_value, noteFeatures *note)
     }
 }
 
+void PrintTuningDistance(noteFeatures *note)
+{
+    uint8_t i;
+    
+    if(note->tuning == ABOVE)
+    {
+        LcdTextLeft2Right();
+        LcdPlaceText(10,SECOND_LINE);
+        for(i = 0; i < note->tuning_interval; i++)
+            LcdSendByte(DATA, BLACK_SQUARE);
+    }
+    else
+    {
+        LcdTextRight2Left();
+        LcdPlaceText(7,SECOND_LINE);
+        for(i = 0; i < note->tuning_interval; i++)
+            LcdSendByte(DATA, BLACK_SQUARE);        
+    }
+        
+}
+
 void ShowNote(noteFeatures *note)
 {
-    switch(note->tuning)
+    LcdClear();
+    LcdPlaceText(8,FIRST_LINE);
+    
+    switch(note->note_index)
     {
-        case BELOW:
-//            BlueLed_SetLow();
-            break;
-        case ABOVE:
-//            BlueLed_SetHigh();
-            break;
+        case 0: LcdPrintString("C"); break;
+        case 1: LcdPrintString("C#"); break;
+        case 2: LcdPrintString("D"); break;
+        case 3: LcdPrintString("D#"); break;
+        case 4: LcdPrintString("E"); break;
+        case 5: LcdPrintString("F"); break;
+        case 6: LcdPrintString("F#"); break;
+        case 7: LcdPrintString("G"); break;
+        case 8: LcdPrintString("G#"); break;
+        case 9: LcdPrintString("A"); break;
+        case 10: LcdPrintString("A#"); break;
+        case 11: LcdPrintString("B"); break;
+        case 12: LcdPrintString("C"); break;
+        case 13: LcdPrintString("C#"); break;
+        case 14: LcdPrintString("D"); break;
+        case 15: LcdPrintString("D#"); break;
+        case 16: LcdPrintString("E"); break;
+        case 17: LcdPrintString("F"); break;
+        case 18: LcdPrintString("F#"); break;
+        case 19: LcdPrintString("G"); break;
+        case 20: LcdPrintString("G#"); break;
+        case 21: LcdPrintString("A"); break;
+        case 22: LcdPrintString("A#"); break;
+        case 23: LcdPrintString("B"); break;
+        case 24: LcdPrintString("C"); break;
+        case 25: LcdPrintString("C#"); break;
+        case 26: LcdPrintString("D"); break;
+        case 27: LcdPrintString("D#"); break;
+        case 28: LcdPrintString("E"); break;
+        case 29: LcdPrintString("F"); break;
+        case 30: LcdPrintString("F#"); break;
+        case 31: LcdPrintString("G"); break;
+        case 32: LcdPrintString("G#"); break;
+        case 33: LcdPrintString("A"); break;
+        case 34: LcdPrintString("A#"); break;
+        case 35: LcdPrintString("B"); break;        
     }
     
-    
-    switch(note->tuning_interval)
-    {
-        case A:
-//            WhiteLed_SetHigh();
-//            GreenLed_SetLow();
-//            YellowLed_SetLow();
-//            RedLed_SetLow();
-            break;
-        case B:
-//            WhiteLed_SetLow();
-//            GreenLed_SetHigh();
-//            YellowLed_SetLow();
-//            RedLed_SetLow();
-            break;
-        case C:
-//            WhiteLed_SetLow();
-//            GreenLed_SetLow();
-//            YellowLed_SetHigh();
-//            RedLed_SetLow();
-            break;
-        case D:
-//            WhiteLed_SetLow();
-//            GreenLed_SetLow();
-//            YellowLed_SetLow();
-//            RedLed_SetHigh();
-            break;
-    }
+    PrintTuningDistance(note);
 }
 
