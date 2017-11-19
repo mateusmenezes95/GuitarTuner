@@ -32,10 +32,7 @@ extern uint8_t completed_sampling;
 int16_t	peak_frequency_bin = 0;
 float peak_frequency = 0;
 fractional spectrum_power;
-fractional average_constant;
-fractional aux_vector[NUM_SAMP];
-fractional average_vector[NUM_SAMP];
-fractional signal_in_dc_level = 0;
+
 noteFeatures note_in
 __attribute__((far,aligned));
 
@@ -45,33 +42,19 @@ int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
     LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
-//    LcdClear();
-//    LcdPlaceText(8,FIRST_LINE);
-//    LcdPrintString("E#");
-//    LcdPlaceText(7,SECOND_LINE);
-//    char t[9] = {255, 255, 255, 1, 1, 255, 255, 255, '\0'};
-//    LcdTextRight2Left();
-//    for(i = 0; i < B; i++)
-//        LcdSendByte(DATA, 255);
-//    LcdPrintString(t);
     AD1CON1bits.ADON = 1;
     
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
     HanningInit(NUM_SAMP, hanning_window);
-    average_constant = Float2Fract(1.0/NUM_SAMP);
-    FillVector(NUM_SAMP, average_vector, average_constant);
     
     while(1)
     {
         if(completed_sampling)
         {
             completed_sampling = NO;
-            Pin_Toggle();
+//            Pin_Toggle();
             if(ping_buffer_full)
             {
-//                signal_in_dc_level = VectorDotProduct(NUM_SAMP, ping_buffer, average_vector);
-//                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
-//                VectorSubtract(NUM_SAMP, ping_buffer, ping_buffer, aux_vector);   //Remove dc level from signal in
                 VectorWindow(NUM_SAMP, ping_buffer, ping_buffer, hanning_window);
                 for(i = 0; i < NUM_SAMP; i++)
                 {
@@ -82,9 +65,6 @@ int main(int argc, char** argv) {
             }
             else
             {
-//                signal_in_dc_level = VectorDotProduct(NUM_SAMP, pong_buffer, average_vector);
-//                FillVector(NUM_SAMP, aux_vector, signal_in_dc_level);
-//                VectorSubtract(NUM_SAMP, pong_buffer, pong_buffer, aux_vector);   //Remove dc level from signal in
                 VectorWindow(NUM_SAMP, pong_buffer, pong_buffer, hanning_window);
                 for(i = 0; i < NUM_SAMP; i++)
                 {
@@ -102,7 +82,7 @@ int main(int argc, char** argv) {
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
             
-            if(peak_frequency < 500.0)
+            if(peak_frequency > 67.35 && peak_frequency < 480.05)
             {
                 NoteDetect(peak_frequency, &note_in);
                 ShowNote(&note_in);
@@ -113,7 +93,6 @@ int main(int argc, char** argv) {
                 LcdPlaceText(3,FIRST_LINE);
                 LcdPrintString("Unknown freq");
             }
-            
             int x = 0;
         }
     }
