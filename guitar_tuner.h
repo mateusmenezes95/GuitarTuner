@@ -97,7 +97,42 @@ void FillVector(uint16_t vectorSize, fractional *vector2Fill, fractional data);
 */
 void NoteDetect(float freq_value, noteFeatures *note);
 
+/**
+  @Summary
+    Updates 16-bit timer value
+
+  @Description
+    This routine print in the LCD how many the string frequency played was
+ above or below of right note 
+
+  @Param
+    note - Struct with note features
+
+  @Returns
+    None
+ 
+  @Example 
+  
+*/
 void PrintTuningDistance(noteFeatures *note);
+
+/**
+  @Summary
+    Updates 16-bit timer value
+
+  @Description
+    This routine print in the LCD the note played and its features 
+
+  @Param
+    note - Struct with note features
+
+  @Returns
+    None
+ 
+  @Example 
+  
+*/
+void ShowNote(noteFeatures *note)
 
 #endif	/* GUITAR_TUNER_H */
 
