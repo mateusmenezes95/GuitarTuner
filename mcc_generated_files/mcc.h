@@ -49,11 +49,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "adc1.h"
+#include "dma.h"
+#include "tmr1.h"
+#include "tmr3.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "dma.h"
-#include "tmr3.h"
-#include "tmr1.h"
 
 #define _XTAL_FREQ  140000000UL
 

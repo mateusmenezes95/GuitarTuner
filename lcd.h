@@ -18,7 +18,7 @@
 #define lcd_d4 LATBbits.LATB3
 #define lcd_d5 LATCbits.LATC0
 #define lcd_d6 LATCbits.LATC1
-#define lcd_d7 LATCbits.LATC2
+#define lcd_d7 LATBbits.LATB4
 
 #define LCD_SECOND_LINE 0x40
 
