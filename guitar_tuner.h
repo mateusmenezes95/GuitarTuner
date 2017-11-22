@@ -132,7 +132,7 @@ void PrintTuningDistance(noteFeatures *note);
   @Example 
   
 */
-void ShowNote(noteFeatures *note)
+void ShowNote(noteFeatures *note);
 
 #endif	/* GUITAR_TUNER_H */
 

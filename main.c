@@ -42,7 +42,6 @@ int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
     LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
-    AD1CON1bits.ADON = 1;
     
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
     HanningInit(NUM_SAMP, hanning_window);
@@ -90,8 +89,8 @@ int main(int argc, char** argv) {
             else
             {
                 LcdClear();
-                LcdPlaceText(3,FIRST_LINE);
-                LcdPrintString("Unknown freq");
+                LcdPlaceText(2,FIRST_LINE);
+                LcdPrintString("Toque a corda");
             }
             int x = 0;
         }
