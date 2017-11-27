@@ -59,7 +59,6 @@
 
 #endif
 
-#define TMR1_INTERRUPT_TICKER_FACTOR    1
 
 /**
   Section: Interface Routines
@@ -109,6 +108,26 @@
 */
 void TMR1_Initialize (void);
 
+
+/**
+  @Summary
+    Used to maintain the driver's state machine and implement its ISR
+
+  @Description
+    This routine is used to maintain the driver's internal state machine and
+    implement its ISR for interrupt-driven implementations.
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+  @Example 
+    Refer to the example of TMR1_Initialize();
+*/
+
+void TMR1_Tasks_16BitOperation( void );
 
 /**
   @Summary
@@ -200,23 +219,6 @@ void TMR1_Counter16BitSet ( uint16_t value );
 
 uint16_t TMR1_Counter16BitGet( void );
 
-/**
-  @Summary
-    Callback for timer interrupt.
-
-  @Description
-    This routine is callback for timer interrupt
-
-  @Param
-    None.
-
-  @Returns
-    None
- 
-  @Example 
-    Refer to the example of TMR1_Initialize();
-*/
-void TMR1_CallBack(void);
 
 /**
   @Summary

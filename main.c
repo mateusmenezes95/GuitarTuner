@@ -81,7 +81,7 @@ int main(int argc, char** argv) {
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
             
-            if(peak_frequency > 67.35 && peak_frequency < 480.05)
+            if(peak_frequency < 500.0)
             {
                 NoteDetect(peak_frequency, &note_in);
                 ShowNote(&note_in);
