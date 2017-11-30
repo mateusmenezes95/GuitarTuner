@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
     LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
-    
+
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
     HanningInit(NUM_SAMP, hanning_window);
     
@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
         if(completed_sampling)
         {
             completed_sampling = NO;
-//            Pin_Toggle();
+//            Pin_Toggle();  
             if(ping_buffer_full)
             {
                 VectorWindow(NUM_SAMP, ping_buffer, ping_buffer, hanning_window);
@@ -81,10 +81,11 @@ int main(int argc, char** argv) {
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
             
-            if(peak_frequency < 500.0)
+            if(peak_frequency > 67.35 && peak_frequency < 480.05)
             {
                 NoteDetect(peak_frequency, &note_in);
                 ShowNote(&note_in);
+                int x = 0;
             }
             else
             {
@@ -92,7 +93,7 @@ int main(int argc, char** argv) {
                 LcdPlaceText(2,FIRST_LINE);
                 LcdPrintString("Toque a corda");
             }
-            int x = 0;
+//            int x = 0;
         }
     }
     return 1;

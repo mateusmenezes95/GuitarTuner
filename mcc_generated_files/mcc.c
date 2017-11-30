@@ -103,7 +103,6 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     ADC1_Initialize();
     TMR3_Initialize();
-    TMR1_Initialize();
     DMA_Initialize();
     INTERRUPT_GlobalEnable();
     WDT_WatchdogtimerSoftwareDisable();

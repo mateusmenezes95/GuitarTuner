@@ -92,9 +92,11 @@ void ADC1_Initialize (void)
 
    AD1CON3 = 0xD;
 
-    // CH0SA AN1; CH0SB AN0; CH0NB AVSS; CH0NA AVSS; 
+    // CH0SA AN2; CH0SB AN0; CH0NB AVSS; CH0NA AVSS;
+   
+   AD1CON4 = 0X0100;
 
-   AD1CHS0 = 0x1;
+   AD1CHS0 = 0x0;
 
     // CSS26 disabled; CSS25 disabled; CSS24 disabled; CSS31 disabled; CSS30 disabled; 
 
