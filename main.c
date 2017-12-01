@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
         if(completed_sampling)
         {
             completed_sampling = NO;
-//            Pin_Toggle();  
+            RedLed_Toggle(); 
             if(ping_buffer_full)
             {
                 VectorWindow(NUM_SAMP, ping_buffer, ping_buffer, hanning_window);
@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
             {
                 NoteDetect(peak_frequency, &note_in);
                 ShowNote(&note_in);
-                int x = 0;
+//                int x = 0;
             }
             else
             {

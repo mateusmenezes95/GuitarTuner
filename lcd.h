@@ -13,12 +13,12 @@
 #define FCY 140000000
 
 /* Pins connected to display*/
-#define lcd_enable LATBbits.LATB1
-#define lcd_rs LATBbits.LATB2
-#define lcd_d4 LATBbits.LATB3
-#define lcd_d5 LATCbits.LATC0
-#define lcd_d6 LATCbits.LATC1
-#define lcd_d7 LATBbits.LATB4
+#define lcd_enable _LATB9
+#define lcd_rs _LATB8
+#define lcd_d4 _LATC6
+#define lcd_d5 _LATC7
+#define lcd_d6 _LATC8
+#define lcd_d7 _LATC9
 
 #define LCD_SECOND_LINE 0x40
 

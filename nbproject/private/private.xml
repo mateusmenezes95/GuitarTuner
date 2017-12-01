@@ -7,9 +7,11 @@
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/adc1.c</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/pin_manager.h</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/lcd.h</file>
+            <file>file:/home/menezes/Desktop/GuitarTuner/guitar_tuner.h</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/main.c</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/dma.c</file>
             <file>file:/home/menezes/Desktop/GuitarTuner/mcc_generated_files/pin_manager.c</file>
+            <file>file:/home/menezes/Desktop/GuitarTuner/lcd.c</file>
         </group>
     </open-files>
 </project-private>

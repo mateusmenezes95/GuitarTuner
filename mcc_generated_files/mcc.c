@@ -46,7 +46,7 @@
 
 // FICD
 #pragma config ICS = PGD2    // ICD Communication Channel Select bits->Communicate on PGEC2 and PGED2
-#pragma config JTAGEN = ON    // JTAG Enable bit->JTAG is enabled
+#pragma config JTAGEN = OFF    // JTAG Enable bit->JTAG is disabled
 
 // FPOR
 #pragma config ALTI2C1 = OFF    // Alternate I2C1 pins->I2C1 mapped to SDA1/SCL1 pins
