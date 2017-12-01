@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
             {
                 NoteDetect(peak_frequency, &note_in);
                 ShowNote(&note_in);
-//                int x = 0;
+//                int x = 0;        //To debug!!!
             }
             else
             {
@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
                 LcdPlaceText(2,FIRST_LINE);
                 LcdPrintString("Toque a corda");
             }
-//            int x = 0;
+//            int x = 0;        //To debug
         }
     }
     return 1;
