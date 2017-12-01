@@ -86,257 +86,28 @@ typedef union
 */
 void LcdSendNibble(char data);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdSendByte(char address, char data);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdInitialize(char mode1, char mode2);
-
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 
 void LcdPlaceText(uint8_t x, uint8_t y);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdPrintChar(uint8_t c);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdPrintString(uint8_t *c);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdClear(void);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdTurnOn(void);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdTurnOff(void);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdTurnOnCursor(void);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdTurnOffCursor(void);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdTurnOnCursorBlink(void);
 
-/**
-  @Summary
-    Updates 16-bit timer value
-
-  @Description
-    This routine uses the Grandke interpolation frequency algorithm to compute 
- the approximate true peak frequency of a spectrum
-
-  @Param
-    peakFreqBin - The bin of greatest frequency of spectrum
-    spectrumAbsVector - The vector with the frequency spectrum magnitude
-    trueValueFreq - The variable address to store the approximate true peak frequency
-
-  @Returns
-    None
- 
-  @Example 
-  
-*/
 void LcdTurnOffCursorBlink(void);
 
 void LcdTextRight2Left();
