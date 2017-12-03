@@ -92,9 +92,9 @@ void LcdInitialize(char mode1, char mode2);
 
 void LcdPlaceText(uint8_t x, uint8_t y);
 
-void LcdPrintChar(uint8_t c);
+void LcdPrintChar(char c);
 
-void LcdPrintString(uint8_t *c);
+void LcdPrintString(char *c);
 
 void LcdClear(void);
 

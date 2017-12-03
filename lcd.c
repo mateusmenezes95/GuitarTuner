@@ -1,6 +1,5 @@
 #include "lcd.h"
-#include <p33EP128MC204.h>
-#include <libpic30.h>
+#include "guitar_tuner.h"
 #include "mcc_generated_files/pin_manager.h"
 
 static char mode_lcd;
@@ -73,12 +72,12 @@ void LcdPlaceText(uint8_t x, uint8_t y)
     LcdSendByte(0, LCD_SET_DDRAM_ADDR | address);
 }
 
-void LcdPrintChar(uint8_t c)
+void LcdPrintChar(char c)
 {
     LcdSendByte(DATA, c);
 }
 
-void LcdPrintString(uint8_t *c)
+void LcdPrintString(char *c)
 {
     while(*c != '\0')
     {
