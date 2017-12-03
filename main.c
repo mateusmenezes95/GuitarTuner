@@ -10,6 +10,7 @@
 #include "mcc_generated_files/mcc.h"
 #include "guitar_tuner.h"
 #include <math.h>
+#include <libpic30.h>
 #include "lcd.h"
 
 extern fractional ping_buffer[NUM_SAMP];
@@ -33,6 +34,9 @@ int16_t	peak_frequency_bin = 0;
 float peak_frequency = 0;
 fractional spectrum_power;
 
+uint8_t display_note = 0;
+uint8_t play_string_active = YES;
+
 noteFeatures note_in
 __attribute__((far,aligned));
 
@@ -42,12 +46,33 @@ int main(int argc, char** argv) {
     
     SYSTEM_Initialize();
     LcdInitialize(LCD_DISPLAY_8X5 | LCD_2_LINES, LCD_DISPLAY_ON | LCD_CURSOR_OFF | LCD_CURSOR_FIXED);
+    
+    LcdClear();
+    LcdPlaceText(2,FIRST_LINE);
+    LcdPrintString(">GuitarTuner<");
 
     TwidFactorInit(LOG2_NUM_SAMP, &twiddle_factors[0], 0);
     HanningInit(NUM_SAMP, hanning_window);
     
     while(1)
-    {
+    {        
+        if(Button2_GetValue() | Button3_GetValue() | Button4_GetValue())
+        {
+            display_note ^= 1;
+            if(display_note == NO)
+            {
+                LcdClear();
+                LcdPlaceText(2,FIRST_LINE);
+                LcdPrintString(">GuitarTuner<");
+            }
+            else
+            {
+                LcdClear();
+                LcdPlaceText(2,FIRST_LINE);
+                LcdPrintString("Toque a corda");
+            }
+        }
+        
         if(completed_sampling)
         {
             completed_sampling = NO;
@@ -81,20 +106,27 @@ int main(int argc, char** argv) {
             VectorMax((NUM_SAMP+NUM_ZEROS)/2, signal_in_Abs, &peak_frequency_bin);                                    
             GrandkeFreqInterpolation(peak_frequency_bin, signal_in_Abs, &peak_frequency);
             
-            if(peak_frequency > 67.35 && peak_frequency < 480.05)
+            if(display_note == YES)
             {
-                NoteDetect(peak_frequency, &note_in);
-                ShowNote(&note_in);
-//                int x = 0;        //To debug!!!
+                if(peak_frequency > 67.35 && peak_frequency < 480.05)
+                {
+                    play_string_active = YES;
+                    NoteDetect(peak_frequency, &note_in);
+                    ShowNote(&note_in);
+                }
+                else
+                {
+                    if(play_string_active)
+                    {
+                        play_string_active = NO;
+                        LcdClear();
+                        LcdPlaceText(2,FIRST_LINE);
+                        LcdPrintString("Toque a corda");
+                    }
+                }
             }
-            else
-            {
-                LcdClear();
-                LcdPlaceText(2,FIRST_LINE);
-                LcdPrintString("Toque a corda");
-            }
-//            int x = 0;        //To debug
         }
+        __delay_ms(100);
     }
     return 1;
 }

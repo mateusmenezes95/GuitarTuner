@@ -8,12 +8,13 @@
 #ifndef GUITAR_TUNER_H
 #define	GUITAR_TUNER_H
 
+#define FCY 140000000
+
 #include <stdint.h>
 #include <math.h>
 #include "dsp.h"
 #include <libpic30.h>
 #include "mcc_generated_files/pin_manager.h"
-
 
 #define NUM_SAMP 512
 #define NUM_ZEROS 512
