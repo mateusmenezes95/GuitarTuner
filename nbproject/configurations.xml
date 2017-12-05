@@ -14,6 +14,7 @@
         <itemPath>mcc_generated_files/adc1.h</itemPath>
         <itemPath>mcc_generated_files/dma.h</itemPath>
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
+        <itemPath>mcc_generated_files/tmr1.h</itemPath>
       </logicalFolder>
       <itemPath>guitar_tuner.h</itemPath>
       <itemPath>lcd.h</itemPath>
@@ -35,6 +36,7 @@
         <itemPath>mcc_generated_files/adc1.c</itemPath>
         <itemPath>mcc_generated_files/dma.c</itemPath>
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
+        <itemPath>mcc_generated_files/tmr1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>guitar_tuner.c</itemPath>

@@ -55,21 +55,25 @@ int main(int argc, char** argv) {
     HanningInit(NUM_SAMP, hanning_window);
     
     while(1)
-    {        
-        if(Button2_GetValue() | Button3_GetValue() | Button4_GetValue())
+    {
+        TMR1_Tasks_16BitOperation();
+        if(TMR1_GetElapsedThenClear())
         {
-            display_note ^= 1;
-            if(display_note == NO)
+            if(Button2_GetValue() | Button3_GetValue() | Button4_GetValue())
             {
-                LcdClear();
-                LcdPlaceText(2,FIRST_LINE);
-                LcdPrintString(">GuitarTuner<");
-            }
-            else
-            {
-                LcdClear();
-                LcdPlaceText(2,FIRST_LINE);
-                LcdPrintString("Toque a corda");
+                display_note ^= 1;
+                if(display_note == NO)
+                {
+                    LcdClear();
+                    LcdPlaceText(2,FIRST_LINE);
+                    LcdPrintString(">GuitarTuner<");
+                }
+                else
+                {
+                    LcdClear();
+                    LcdPlaceText(2,FIRST_LINE);
+                    LcdPrintString("Toque a corda");
+                }
             }
         }
         
@@ -97,6 +101,7 @@ int main(int argc, char** argv) {
                     signal_in_complex[i].imag = 0;
                 }                              
             }
+            
             VectorZeroPad(NUM_SAMP, NUM_ZEROS, &signal_in_complex[0].real, &signal_in_complex[0].real);
             VectorZeroPad(NUM_SAMP, NUM_ZEROS, &signal_in_complex[0].imag, &signal_in_complex[0].imag);
             FFTComplexIP(LOG2_NUM_SAMP, &signal_in_complex[0], &twiddle_factors[0], COEFFS_IN_DATA);       
@@ -126,7 +131,7 @@ int main(int argc, char** argv) {
                 }
             }
         }
-        __delay_ms(100);
+//        __delay_ms(100);
     }
     return 1;
 }

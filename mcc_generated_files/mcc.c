@@ -104,6 +104,7 @@ void SYSTEM_Initialize(void)
     ADC1_Initialize();
     TMR3_Initialize();
     DMA_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     WDT_WatchdogtimerSoftwareDisable();
     CORCON_ModeOperatingSet(CORCON_MODE_PORVALUES);
